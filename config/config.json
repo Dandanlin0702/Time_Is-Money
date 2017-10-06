@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "time-is-money",
+    "password": "time",
+    "database": "time-is-money_development",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "time-is-money",
+    "password": "time",
+    "database": "time-is-money_test",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "time-is-money",
+    "password": "time",
+    "database": "time-is-money_production",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  }
+}
