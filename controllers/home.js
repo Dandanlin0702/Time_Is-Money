@@ -19,10 +19,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.post('/', (req, res) => {
-  res.json({
+router.get('/signup', (req, res) => {
+  /*res.json({
     msg: "Successful POST to '/' route"
-  });
+  });*/
+  res.render('signup');
 });
 
 router.put('/:id', (req, res) => {
