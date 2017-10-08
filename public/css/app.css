@@ -1,0 +1,149 @@
+/*Media Query*/
+
+@media (max-width: 740px) {
+  .full-height, .full-height body, .full-height header, .full-height header .view {
+    height: 750px;
+  }
+  body {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (min-width: 741px) and (max-height: 638px) {
+  .full-height, .full-height body, .full-height header, .full-height header .view {
+    height: 750px;
+  }
+}
+
+
+/*Elements*/
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h6 {
+  line-height: 1.7;
+}
+
+a {
+  color: #fff;
+}
+
+footer {
+  background-color: #31b0df;
+  margin-top: -1px;
+  text-align: center;
+}
+
+
+/*Classes*/
+
+html, body, .view {
+  height: 100%;
+}
+
+/*Navbar*/
+.navbar {
+  background-color: transparent;
+}
+
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background-color: #31b0df;
+}
+
+.navbar .btn-group .dropdown-menu a:hover {
+  color: #000 !important;
+}
+
+.navbar .btn-group .dropdown-menu a:active {
+  color: #fff !important;
+}
+
+.flex-center {
+  color: #fff;
+}
+
+.flex-container {
+  display: flex;
+  overflow-y: scroll;
+  padding: 80px 0px;
+  min-height: 100%;
+}
+
+.thumbnail {
+  padding: 20px;
+}
+
+/*IDs*/
+
+#heading {
+  background: url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg") no-repeat center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 165%;
+}
+
+#currency {
+  background: url("https://images.pexels.com/photos/38267/clock-time-stand-by-38267.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#variety {
+  background: url("https://static.pexels.com/photos/17679/pexels-photo.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#organization {
+  background: url("https://static.pexels.com/photos/398532/pexels-photo-398532.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#about {
+  background:
+  linear-gradient(
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.28)
+    ),
+   url("https://static.pexels.com/photos/355988/pexels-photo-355988.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: right;
+}
+
+#features {
+  background: #397bd2;
+}
+
+#team {
+  background: url("https://static.pexels.com/photos/162616/coffee-work-desk-mug-keyboard-162616.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#login-form {
+  background-color: rgba(229, 228, 255, 0.3);
+  margin: 50px 40px;
+}
