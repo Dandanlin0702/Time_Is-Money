@@ -12,6 +12,13 @@ router.get('/', (req, res) => {
   res.render('home');
 });
 
+router.get('/login', (req, res) => {
+  // res.json({
+  //   msg: "Successful GET to '/' route"
+  // });
+  res.render('login');
+});
+
 router.post('/', (req, res) => {
   res.json({
     msg: "Successful POST to '/' route"
