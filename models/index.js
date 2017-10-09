@@ -28,6 +28,9 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+var passport = require('passport')
+  , FacebookStrategy = require('passport-facebook').Strategy;
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
