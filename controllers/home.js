@@ -19,10 +19,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.post('/', (req, res) => {
-  res.json({
+router.get('/signup', (req, res) => {
+  /*res.json({
     msg: "Successful POST to '/' route"
-  });
+  });*/
+  res.render('signup');
 });
 
 router.put('/:id', (req, res) => {
@@ -39,5 +40,14 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+/*
+router.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    // res.redirect('/users/' + req.user.username);
+  });
+*/
 
 module.exports = router;
