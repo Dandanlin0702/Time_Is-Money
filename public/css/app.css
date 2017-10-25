@@ -36,10 +36,11 @@ footer {
   text-align: center;
 }
 
+
 /*Classes*/
 
 html, body, .view {
-  height: 100%;
+  min-height: 100%;
 }
 
 .intro-2 {
@@ -51,16 +52,19 @@ html, body, .view {
   -o-background-size: cover;
 }
 
+
 /*Navbar*/
+
 .navbar {
   background-color: transparent;
 }
 
-.scrolling-navbar {
+
+/*.scrolling-navbar {
   -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
   -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
   transition: background .5s ease-in-out, padding .5s ease-in-out;
-}
+}*/
 
 .top-nav-collapse {
   background-color: #31b0df;
@@ -89,6 +93,14 @@ html, body, .view {
   padding: 20px;
 }
 
+.categories-img {
+  border-radius: 5px;
+}
+
+.categories-img:hover {
+  opacity: 0.7;
+}
+
 /*Login Form*/
 
 .md-form input[type=text]:focus:not([readonly]), .md-form input[type=password]:focus:not([readonly]) {
@@ -104,7 +116,7 @@ html, body, .view {
   color: #fff;
 }
 
-g .md-form .prefix {
+.md-form .prefix {
   font-size: 1.5rem;
   margin-top: 1rem;
 }
@@ -112,6 +124,7 @@ g .md-form .prefix {
 .md-form label {
   color: #ffffff;
 }
+
 
 /*IDs*/
 
@@ -125,37 +138,13 @@ g .md-form .prefix {
   font-size: 165%;
 }
 
-#currency {
-  background: url("https://images.pexels.com/photos/38267/clock-time-stand-by-38267.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#variety {
-  background: url("https://static.pexels.com/photos/17679/pexels-photo.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#organization {
-  background: url("https://static.pexels.com/photos/398532/pexels-photo-398532.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#categories {
+  background: #f8f6fc;
+  padding: 40px 0px 80px;
 }
 
 #about {
-  background:
-  linear-gradient(
-      rgba(0, 0, 0, 0.28),
-      rgba(0, 0, 0, 0.28)
-    ),
-   url("https://static.pexels.com/photos/355988/pexels-photo-355988.jpeg") no-repeat center center fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("https://static.pexels.com/photos/355988/pexels-photo-355988.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
