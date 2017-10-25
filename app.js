@@ -1,12 +1,14 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const models = require('./models');
+const models = require('./models/');
 const flash = require('connect-flash');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
@@ -37,7 +39,6 @@ app.set('views', `${__dirname}/views/`);
 // Load up all of the controllers
 const controllers = require('./controllers');
 app.use(controllers);
-
 
 // First, make sure the Database tables and models are in sync
 // then, start up the server and start listening.
