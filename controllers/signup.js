@@ -1,5 +1,5 @@
 const express = require('express');
-//const User = require('../models/user');
+const models = require('../models/');
 const passport = require('../middlewares/authentication');
 
 const Controller = {
@@ -15,7 +15,7 @@ const Controller = {
     res.render('signup');
   },
   signup(req, res) {
-    models.Users.create({
+    models.User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
