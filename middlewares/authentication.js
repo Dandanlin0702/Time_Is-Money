@@ -2,46 +2,24 @@ const bcrypt = require('bcrypt-nodejs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const Users = require('../models').Users;
+const User = require('../models').User;
 
 function passwordsMatch(passwordSubmitted, storedPassword) {
   return bcrypt.compareSync(passwordSubmitted, storedPassword);
 }
 
-// passport.use(new LocalStrategy({
-//     usernameField: 'email',
-//   },
-//   (email, password, done) => {
-//     Users.findOne({
-//       where: { email },
-//     }).then((user) => {
-//       if(!user) {
-//         return done(null, false, { message: 'Incorrect email.' });
-//       }
-//
-//       if (passwordsMatch(password, user.password_has) === false) {
-//         return done(null, false, { message: 'Incorrect password.' });
-//       }
-//
-//       return done(null, user, { message: 'Successfully Logged In!' });
-//     });
-//   })
-// );
-
-/***********************************************************************
-******************************Login Use Username************************/
 passport.use(new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
   },
-  (username, password, done) => {
-    Users.findOne({
-      where: { username },
+  (email, password, done) => {
+    User.findOne({
+      where: { email },
     }).then((user) => {
       if(!user) {
-        return done(null, false, { message: 'Incorrect username.' });
+        return done(null, false, { message: 'Incorrect email.' });
       }
 
-      if (passwordsMatch(password, user.password_has) === false) {
+      if (passwordsMatch(password, user.password_hash) === false) {
         return done(null, false, { message: 'Incorrect password.' });
       }
 
@@ -55,7 +33,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  Users.findById(id).then((user) => {
+  User.findById(id).then((user) => {
     if (!user) {
       return done(null, false);
     }
@@ -63,5 +41,11 @@ passport.deserializeUser((id, done) => {
     return done(null, user);
   });
 });
+
+passport.redirectIfLoggedIn = (route) =>
+  (req, res, next) => (req.user ? res.redirect(route) : next());
+
+passport.redirectIfNotLoggedIn = (route) =>
+  (req, res, next) => (req.user ? next() : res.redirect(route));
 
 module.exports = passport;
