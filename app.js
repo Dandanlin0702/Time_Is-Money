@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const models = require('./models');
+const flash = require('connect-flash');
 
 const PORT = process.env.PORT || 8000;
 

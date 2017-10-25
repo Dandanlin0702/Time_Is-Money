@@ -1,9 +1,11 @@
 const redirect = {};
 
-redirect.redirectIfLoggedIn = (route) =>
-  (req, res, next) => (req.user ? res.redirect(route) : next());
+//middleware function to check if user is authenticated for loggedin only pages
+redirect.isLoggedIn = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+}
 
-redirect.redirectIfNotLoggedIn = (route) =>
-  (req, res, next) => (req.user ? next() : res.redirect(route));
-
-  module.exports = redirect;
+module.exports = redirect;

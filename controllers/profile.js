@@ -1,12 +1,13 @@
 const express = require('express');
 const User = require('../models/user');
 const passport = require('../middlewares/authentication');
+const redirect = require('../middlewares/redirect');
 
 const Controller = {
   registerRouter() {
     const router = express.Router();
 
-    router.get('/', redirectIfNotLoggedIn('/profile'), this.index);
+    router.get('/', redirect.isLoggedIn, this.index);
 
     return router;
   },
@@ -14,3 +15,5 @@ const Controller = {
     res.render('profile');
   }
 };
+
+module.exports = Controller.registerRouter();
