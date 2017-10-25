@@ -16,7 +16,7 @@ const Controller = {
   },
   login(req, res) {
     passport.authenticate('local', {
-      successRedirect: '/profile',
+      successRedirect: '/',
       failureRedirect: '/login',
       failureFlash: true,
       successFlash: true
