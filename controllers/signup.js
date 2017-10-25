@@ -17,8 +17,6 @@ const Controller = {
   signup(req, res) {
     models.Users.create({
       username: req.body.username,
-      firstName: req.body.firstName,
-      lastName: req.body.lasttName,
       email: req.body.email,
       password: req.body.password
     }).then((user) => {
