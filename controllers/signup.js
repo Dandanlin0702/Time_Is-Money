@@ -22,7 +22,7 @@ const Controller = {
     }).then((user) => {
       // generate e token for emial confirmation
       req.login(user, () => {
-        res.redirect('/profile');
+        res.redirect('/');
       });
     });
   }
