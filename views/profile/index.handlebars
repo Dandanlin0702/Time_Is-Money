@@ -1,25 +1,79 @@
-{{#each success}}
-  <div class="alert alert-danger">{{this}}</div>
-{{/each}}
-
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+<!--/.Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>{{user.username}}</h1>
-          <hr class="small">
-          <span class="subheading">{{user.email}}</span>
+    <a class="navbar-brand" href="/">Time is Money</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> My Account</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="profile" class="view hm-black-light">
+  <div class="full-bg-img flex-center">
+    <ul id="banner" class="wow fadeInUp">
+      <li>
+        <h1 class="h1-responsive font-bold">Hello, {{user.username}}!</h1>
+      </li>
+      <li>
+        <p class="px-5 pb-4">Lorem ipsum dolor sit amet, nulla mundi tractatos ne his, cu eum delenit voluptua philosophia. Vis natum appareat posidonium ne, eius oportere cu ius. Mea nemore suscipit eleifend ut, nam ex aeterno periculis. Virtute laboramus argumentu est at,
+          cum ea tempor placerat pertinacia. Nibh aliquip tamquam mel ea, vel ex nonumy fuisset, aliquip veritus apeirian mea cu. In case causae nominavi usu. Ludus suavitate nam id, justo aliquip contentiones sed ad, vidisse omittam fastidii pro ei.
+          Ex homero facilisis mel. Duo in quod accusam, id vel doming nemore, cum odio possim ad. Nobis solet at mel, vim noster euismod id, te nec augue suscipit.</p>
+      </li>
+      <li>
+        <button class="btn btn-outline-white"><h1 class="h2-responsive yellow-text"><i class="fa fa-clock-o" aria-hidden="true"></i> 6 </h1></button>
+    </ul>
+  </div>
+</div>
+
+<div id="user-info" class="container-fluid">
+  <div class="container">
+    <div class="flex-center mask">
+      <div class="col-md-5">
+        <!--Panel-->
+        <div class="mt-4 card card-body z-depth-3">
+          <div class="text-center">
+            <li>
+              <h2 class="h2-responsive black-text font-bold">Check Your Current Services</h2></li>
+            <hr>
+            <!-- <li><h4 class="black-text h4-responsive">Dog Walking</h4></li>
+          <li><h4 class="black-text h4-responsive">Toddler Sitting (Ages 3-7)</h4></li>
+          <li><h4 class="black-text h4-responsive">Lawn Mowing</h4></li>
+          <hr> -->
+            <li><a href="#" class="mb-1 btn btn-outline-black wow fadeIn" data-wow-delay="0.2s">Offer Service</a></li>
+          </div>
         </div>
+      </div>
+      <!--/.Panel-->
+      <!--Panel-->
+      <div class="col-md-5 offset-md-2">
+        <div class="mt-4 card card-body z-depth-3">
+          <div class="text-center">
+            <li>
+              <h2 class="h2-responsive black-text font-bold">View Your Request History</h2></li>
+            <hr>
+            <li><a href="#" class="mb-1 btn btn-outline-black wow fadeIn" data-wow-delay="0.2s">My Requests</a></li>
+          </div>
+        </div>
+        <!--/.Panel-->
       </div>
     </div>
   </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p>Random Profile Info..</p>
-    </div>
-  </div>
 </div>
+
+<!--Footer-->
+<footer class="footer center-on-small-only">
+  <a class="up-arrow text-white" href="#profile" data-toggle="tooltip" title="To Top">
+      <i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+</footer>
+<!--/.Footer-->
