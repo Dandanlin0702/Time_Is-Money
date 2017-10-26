@@ -11,25 +11,26 @@
           <a class="nav-link" href="#about">How It Works</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#team">About Us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        {{#if cur_user}}
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="/profile">Hello, {{cur_user.username}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#team">Team</a>
+          <a href="/logout" class="btn btn-deep-orange btn-sm wow fadeInRight" rel="nofollow">Log Out</a>
         </li>
-        <!-- <li class="nav-item btn-group">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">TBD</a>
-          </div>
-        </li> -->
+        {{ else }}
+        <li class="nav-item">
+          <a href="/signup" class="btn btn-light-green btn-sm wow fadeInRight" rel="nofollow">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="btn btn-primary btn-sm wow fadeInRight" rel="nofollow">Log In</a>
+        </li>
+        {{/if}}
       </ul>
-      {{#if cur_user}}
-        <span>Hello, {{cur_user.username}} </span>
-        <li id="logout"><a href="/logout">Logout</a></li>
-      {{ else }}
-        <a href="/signup" class="btn btn-light-green btn-sm wow fadeInRight" rel="nofollow">Sign Up</a>
-        <a href="/login" class="btn btn-primary btn-sm wow fadeInRight" rel="nofollow">Log In</a>
-      {{/if}}
     </div>
   </div>
 </nav>
@@ -41,10 +42,22 @@
       <li>
         <h1 class="h1-responsive font-bold">Time is Money</h1></li>
       <li>
-        <p>The marketplace for simple daily tasks</p>
+        <p>The marketplace for simple daily tasks paid by your time</p>
       </li>
       <li>
-        <a href="#" class="btn btn-info btn-lg wow fadeInUp" rel="nofollow">Get Started</a>
+        <div class="row wow fadeIn">
+          <div class="col-md-9">
+            <div class="md-form">
+              <input type="text" id="search" class="form-control validate">
+              <label for="search">Get started now</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="md-form">
+              <button class="btn btn-lg btn-info">Search</button>
+            </div>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
@@ -54,20 +67,24 @@
 <!-- Categories -->
 <div id="categories" class="container-fluid">
   <div class="container">
-    <h1 class="h1-responsive font-bold text-center">Categories</h1>
-    <p class="text-center font-bold mb-5">Get started now by exploring our current marketplace</p>
+    <h1 class="h1-responsive font-bold text-center">Marketplace</h1>
+    <p class="text-center font-bold mb-5">Explore our marketplace. Have something to offer? Offer your services!</p>
     <div class="row">
-      <div class="col-sm-3">
-        <a href="#"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+      <div class="col-md-3">
+        <h4 class="h4-responsive">Tutoring</h4>
+        <a href="#"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
-      <div class="col-sm-3">
-        <a href="#"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+      <div class="col-md-3">
+        <h4 class="h4-responsive">Childcare</h4>
+        <a href="#"><img src="https://images.pexels.com/photos/225017/pexels-photo-225017.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
-      <div class="col-sm-3">
-        <a href="#"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+      <div class="col-md-3">
+        <h4 class="h4-responsive">Petcare</h4>
+        <a href="#"><img src="https://images.pexels.com/photos/5777/dog-pet-cute-sweet.jpg?h=350&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
-      <div class="col-sm-3">
-        <a href="#"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+      <div class="col-md-3">
+        <h4 class="h4-responsive">Housecare</h4>
+        <a href="#"><img src="https://images.pexels.com/photos/358572/pexels-photo-358572.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
     </div>
   </div>

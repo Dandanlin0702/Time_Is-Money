@@ -1,6 +1,6 @@
 /*Media Query*/
 
-@media (max-width: 740px) {
+/*@media (max-width: 740px) {
   .full-height, .full-height body, .full-height header, .full-height header .view {
     height: 750px;
   }
@@ -13,7 +13,7 @@
   .full-height, .full-height body, .full-height header, .full-height header .view {
     height: 750px;
   }
-}
+}*/
 
 
 /*Elements*/
@@ -36,11 +36,14 @@ footer {
   text-align: center;
 }
 
+body {
+  background-image: url("/img/wet_snow.png");
+  background-repeat: repeat;
+}
 
 /*Classes*/
-
-html, body, .view {
-  min-height: 100%;
+.view {
+  height: 100%;
 }
 
 .intro-2 {
@@ -52,19 +55,16 @@ html, body, .view {
   -o-background-size: cover;
 }
 
-
 /*Navbar*/
-
 .navbar {
-  background-color: transparent;
+*background-color: transparent;
 }
 
-
-/*.scrolling-navbar {
+.scrolling-navbar {
   -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
   -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
   transition: background .5s ease-in-out, padding .5s ease-in-out;
-}*/
+}
 
 .top-nav-collapse {
   background-color: #31b0df;
@@ -84,7 +84,7 @@ html, body, .view {
 
 .flex-container {
   display: flex;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   padding: 80px 0px;
   min-height: 100%;
 }
@@ -139,7 +139,6 @@ html, body, .view {
 }
 
 #categories {
-  background: #f8f6fc;
   padding: 40px 0px 80px;
 }
 
@@ -152,9 +151,6 @@ html, body, .view {
   text-align: right;
 }
 
-#features {
-  background: #397bd2;
-}
 
 #team {
   background: url("https://static.pexels.com/photos/162616/coffee-work-desk-mug-keyboard-162616.jpeg") no-repeat center center fixed;
@@ -164,7 +160,20 @@ html, body, .view {
   background-size: cover;
 }
 
+#profile {
+  max-height: 75%;
+  background: url("https://images.pexels.com/photos/597331/pexels-photo-597331.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #login-form {
   background-color: rgba(229, 228, 255, 0.3);
   margin: 50px 40px;
+}
+
+#user-info {
+  padding: 80px 80px;
 }
