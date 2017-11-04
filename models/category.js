@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+ // Association
  Category.associate = (models) => {
     models.Category.hasMany(models.SubCategory);
   }
