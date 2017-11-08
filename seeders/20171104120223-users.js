@@ -3,31 +3,31 @@ module.exports = {
    up: (queryInterface, Sequelize) => {
       // Return a promise to correctly handle asynchronicity.
       return queryInterface.bulkInsert('Users', [{
-         username: 'user1',
-         email: 'user1@test.com',
-         password_hash: 'testpass',
-         balance: 1,
+         username: 'risatoy',
+         email: 'risatoy@test.com',
+         password: 'risatoy',
+         balance: 10,
          createdAt: new Date(),
          updatedAt: new Date()
       }, {
-         username: 'user2',
-         email: 'user2@test.com',
-         password_hash: 'testpass',
-         balance: 2,
+         username: 'heidiwu',
+         email: 'heidiwu@test.com',
+         password_hash: 'heidiwu',
+         balance: 10,
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         username: 'user3',
-         email: 'user3@test.com',
-         password_hash: 'testpass',
-         balance: 3,
+         username: 'dandanlin',
+         email: 'dandanlin@test.com',
+         password_hash: 'dandanlin',
+         balance: 10,
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         username: 'user4',
-         email: 'user4@test.com',
-         password_hash: 'testpass',
-         balance: 4,
+         username: 'elise',
+         email: 'elise@test.com',
+         password_hash: 'elise',
+         balance: 10,
          createdAt: new Date(),
          updatedAt: new Date(),
       }], {});
@@ -36,13 +36,13 @@ module.exports = {
    down: (queryInterface, Sequelize) => {
       // Return a promise to correctly handle asynchronicity.
       return queryInterface.bulkDelete('Users', [{
-         username: 'user1'
+         username: 'risatoy'
       }, {
-         username: 'user2'
+         username: 'heidiwu'
       }, {
-         username: 'user3'
+         username: 'dandanlin'
       }, {
-         username: 'user4'
+         username: 'elise'
       }], {});
    }
 };

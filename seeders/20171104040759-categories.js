@@ -4,19 +4,19 @@ module.exports = {
    up: (queryInterface, Sequelize) => {
       // Testing Categories
       return queryInterface.bulkInsert('Categories', [{
-         category_name: 'cat1',
+         category_name: 'Tutoring',
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         category_name: 'cat2',
+         category_name: 'Pet Services',
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         category_name: 'cat3',
+         category_name: 'Babysitting',
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         category_name: 'cat4',
+         category_name: 'Home Care',
          createdAt: new Date(),
          updatedAt: new Date(),
       }], {});
@@ -25,13 +25,13 @@ module.exports = {
    down: (queryInterface, Sequelize) => {
       queryInterface.bulkDelete('Categories',
       [{
-        category_name: 'cat1'
+        category_name: 'Tutoring'
      }, {
-        category_name: 'cat2'
+        category_name: 'Pet Services'
      }, {
-        category_name: 'cat3'
+        category_name: 'Babysitting'
      }, {
-        category_name: 'cat4'
-     }], {});
-   }
+        category_name: 'Home Care'
+      }], {});
+    }
 };
