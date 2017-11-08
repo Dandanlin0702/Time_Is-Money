@@ -5,22 +5,22 @@ module.exports = {
       //Testing SubCategories
       return queryInterface.bulkInsert('SubCategories', [{
          subcategory_name: 'Math',
-         category_id: Category.findOne({where: {category_name: 'Tutoring'}}),
+         CategoryId: 1,
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
          subcategory_name: 'Science',
-         category_id: Category.findOne({where: {category_name: 'Tutoring'}}),
+         CategoryId: 1,
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
          subcategory_name: 'Pet Sitting',
-         category_id: Category.findOne({where: {category_name: 'Pet Services'}}),
+         CategoryId: 2,
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
          subcategory_name: 'Toddlers',
-         category_id: Category.findOne({where: {category_name: 'Babysitting'}})
+         CategoryId: 3,
          createdAt: new Date(),
          updatedAt: new Date(),
       }], {});
