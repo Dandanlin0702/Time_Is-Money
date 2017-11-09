@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const models = require('./models/');
 const flash = require('connect-flash');
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 app.use(methodOverride('_method'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
