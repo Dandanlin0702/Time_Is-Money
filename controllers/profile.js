@@ -18,7 +18,7 @@ const Controller = {
     res.render('profile', { user: req.user, success: req.flash('success')});
   },
   new(req, res) {
-    res.render('profile', {layouts: true});
+    res.render('profile/offer_form', {layouts: true});
     // models.SubCategory.findAll()
     // .then((subcategories) => {
     //   res.render('profile', { user: req.user, subcategories: subcategories});
