@@ -1,0 +1,55 @@
+<!--Main Navigation-->
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark mdb-color darken-1">
+    <div class="container">
+      <a class="navbar-brand" href="/">Time is Money</a>
+    </div>
+  </nav>
+  <!--/.Navbar-->
+  <!--Intro Section-->
+  <div class="view intro-2 hm-black-light">
+    <div class="full-bg-img flex-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto">
+            <div id="login-form" class="card wow fadeIn" data-wow-delay="0.3s">
+              <div class="card-body">
+                <div class="form-header text-center">
+                  <h2 class="h2-responsive font-bold">Sign Up</h2>
+                  <p>Don't have an account? Get access today by signing up!</p>
+                  <hr>
+                </div>
+                <form action="/signup" method="POST">
+                  <div class="md-form">
+                    <i class="fa fa-user prefix white-text"></i>
+                    <input type="text" name="username" id="orangeForm-name" class="form-control" required>
+                    <label for="orangeForm-name">Username</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fa fa-envelope prefix white-text"></i>
+                    <input type="email" name="email" id="orangeForm-email" class="form-control" required>
+                    <label for="orangeForm-email">Email</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fa fa-lock prefix white-text"></i>
+                    <input type="password" name="password" id="orangeForm-pass" class="form-control">
+                    <label for="orangeForm-pass">Password</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fa fa-lock prefix white-text"></i>
+                    <input type="password" name="confirm-password" id="orangeForm-pass" class="form-control">
+                    <label for="orangeForm-pass">Confirm Password</label>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-default btn-lg">Sign Up</button>
+                  </div>
+                </form>
+                <p style="text-align: center">Already a user? <a href="/login">Sign in here</a>.</p>
+              </div>
+            </div>
+          </div>
+          <!--/Form with header-->
+        </div>
+      </div>
+    </div>
+  </div>
