@@ -8,11 +8,10 @@ const Controller = {
 
     router.get('/', this.index);
 
-
     return router;
   },
   index(req, res) {
-    res.send("this is SubCategory");
+    res.render('subcategory')
   }
 };
 
