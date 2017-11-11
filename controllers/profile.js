@@ -1,5 +1,5 @@
 const express = require('express');
-const User = require('../models/user');
+const models = require('../models');
 const passport = require('../middlewares/authentication');
 const redirect = require('../middlewares/redirect');
 
@@ -8,12 +8,30 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', redirect.isLoggedIn, this.index);
+    router.get('/new', this.new);
+    router.post('/', this.create);
+    router.get('/:id', this.show);
 
     return router;
   },
   index(req, res) {
     res.render('profile', { user: req.user, success: req.flash('success')});
-  }
+  },
+  new(req, res) {
+    res.render('profile/offer_form', {layouts: true});
+    // models.SubCategory.findAll()
+    // .then((subcategories) => {
+    //   res.render('profile', { user: req.user, subcategories: subcategories});
+    // });
+  },
+  create(req, res) {
+    res.redirect('profile/offer_form_show');
+  },
+  show(req, res) {
+    res.render('profile/offer_form_show');
+  },
+
+
 };
 
 module.exports = Controller.registerRouter();
