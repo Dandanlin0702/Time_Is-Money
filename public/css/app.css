@@ -100,7 +100,9 @@ body {
 .categories-img:hover {
   opacity: 0.7;
 }
-
+.col-margin {
+  margin-bottom: 30px;
+}
 /*Login Form*/
 
 .md-form input[type=text]:focus:not([readonly]), .md-form input[type=password]:focus:not([readonly]) {
