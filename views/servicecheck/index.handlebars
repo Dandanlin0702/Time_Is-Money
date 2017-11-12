@@ -12,16 +12,20 @@
                     <hr class="small">
                     <div class="service-item">
                         <h4>
-                            <strong>
-                                {{#each user.RequestedService}}
-                                    <li>
-                                        Service: {{service_name}}
-                                        Status: {{is_accepted}}
-                                        Time: {{requested_datetime}}
-                                        Credit: {{num_hours}}
-                                    </li>
-                                {{/each}}
-                            </strong>
+                            <p>Following are the services you requested</p>
+                            {{#each user.allServices}}
+                            <div class="service-preview">
+                                <h2 class="service-name">
+                                    Service: {{service_name}}
+                                </h2>
+                                <li>
+                                    Status: {{is_accepted}}
+                                    Time: {{requested_datetime}}
+                                    Credit: {{num_hours}}
+                                </li>
+                            </div>
+                            <hr>
+                            {{/each}}
                         </h4>
                     </div>
                 </div>
@@ -34,16 +38,20 @@
                     <hr class="small">
                     <div class="service-item">
                         <h4>
-                            <strong>
-                                {{#each user.OfferedServices}}
-                                    <li>
-                                        Service: {{service_name}}
-                                        Status: {{is_accepted}}
-                                        Time: {{requested_datetime}}
-                                        Credit: {{num_hours}}
-                                    </li>
-                                {{/each}}
-                            </strong>
+                            <p>Following are the services you offered</p>
+                            {{#each user.allServices}}
+                            <div class="service-preview">
+                                <h2 class="service-name">
+                                    Service: {{service_name}}
+                                </h2>
+                                <li>
+                                    Status: {{is_accepted}}
+                                    Time: {{requested_datetime}}
+                                    Credit: {{num_hours}}
+                                </li>
+                            </div>
+                            <hr>
+                            {{/each}}
                         </h4>
                     </div>
                 </div>
