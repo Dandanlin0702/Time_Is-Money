@@ -1,3 +1,5 @@
+
+
 module.exports = (sequelize, DataTypes) => {
   const RequestedService = sequelize.define('RequestedService', {
     service_name: {

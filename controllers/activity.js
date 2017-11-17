@@ -1,4 +1,5 @@
 const express = require('express');
+const models = require('../models/');
 // const passport = require('../middlewares/authentication');
 // const redirect = require('../middlewares/redirect');
 
@@ -12,7 +13,7 @@ const Controller = {
     return router;
   },
   index(req, res) {
-  	res.render('servicecheck')
+  	res.render('activity')
   },
   show(req, res) {
   	models.Service.findOne({
@@ -24,7 +25,7 @@ const Controller = {
   			where: {
   				UserId: user.id,
   			}
-  		}).then((service) =>{
+  		}).then((allServices) =>{
   			models.RequestedService.findOne({
   				where: {
   					ServiceId: service.id,
