@@ -1,0 +1,46 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <a class="navbar-brand" href="/">Time is Money</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        {{#each allSubCat}}
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{this.subcategory_name}}</a>
+        </li>
+        {{/each}}
+      </ul>
+    </nav>
+
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+      <h2>Sub Categories</h2>
+      <!-- Categories -->
+      <div id="categories" class="container-fluid">
+        <div class="container">
+          <h1 class="h1-responsive font-bold text-center">Pet Care</h1>
+          <div class="row">
+            {{#each allServices}}
+            <div class="col-md-4 col-margin">
+              <div class="card card-body">
+                  <h4 class="card-title">{{this.service_name}}</h4>
+                  <p class="card-text">{{this.description}}</p>
+                  <div class="flex-row">
+                      <a class="card-link">View More</a>
+                      <a class="card-link">Request</a>
+                  </div>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
