@@ -1,0 +1,64 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <a class="navbar-brand" href="/">Time is Money</a>
+</nav>
+
+<section class="view intro-3 hm-gradient">
+    <div class="full-bg-img">
+        <div class="container flex-center">
+        <div class="col-md-6">
+            <!--List-->
+            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                <div class="card-body">
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3 class="white-text"><i class="fa fa-server white-text"></i> Services You Requested</h3>
+                        <hr class="hr-light">
+                    </div>
+                    <!--Body-->
+                    {{#each user.allServices}}
+                        <div class="service-preview">
+                            <h2 class="service-name">
+                                Service: {{this.service_name}}
+                            </h2>
+                            <li>
+                                Status: {{this.is_accepted}}
+                                Time: {{this.requested_datetime}}
+                                Credit: {{this.num_hours}}
+                            </li>
+                        </div>
+                        <hr>
+                    {{/each}}
+
+                </div>
+            </div>
+        <!--/.List-->
+        </div>
+
+        <div class="col-md-6">                        <!--Form-->
+            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                <div class="card-body">
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3 class="white-text"><i class="fa fa-server white-text"></i> Services You Offered</h3>
+                        <hr class="hr-light">
+                    </div>
+                    <!--Body-->
+                    {{#each user.allServices}}
+                        <div class="service-preview">
+                            <h2 class="service-name">
+                                Service: {{this.service_name}}
+                            </h2>
+                            <li>
+                                Status: {{this.is_accepted}}
+                                Time: {{this.requested_datetime}}
+                                Credit: {{this.num_hours}}
+                            </li>
+                        </div>
+                        <hr>
+                    {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

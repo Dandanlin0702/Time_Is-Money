@@ -1,7 +1,5 @@
-
-
 module.exports = (sequelize, DataTypes) => {
-  const RequestedService = sequelize.define('RequestedService', {
+  const OfferedService = sequelize.define('OfferedService', {
     service_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,10 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
- RequestedService.associate = (models) => {
-    models.RequestedService.belongsTo(models.User);
-    models.RequestedService.belongsTo(models.Service);
+ OfferedService.associate = (models) => {
+    models.OfferedService.belongsTo(models.User);
+    models.OfferedService.belongsTo(models.Service);
   }
 
-  return RequestedService;
+  return OfferedService;
 };
