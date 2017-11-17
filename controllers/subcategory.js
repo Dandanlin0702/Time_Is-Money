@@ -8,15 +8,26 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', this.index);
+    router.get('/:category', this.show);
 
     return router;
   },
-  index(req, res){
-    models.Service.findAll({}).then((allServices) => {
-      res.render('subcategory', {allServices});
-  });
-  //res.render('subcategory')
-}
+  index(req, res) {
+    res.render('subcategory')
+  },
+  show(req, res) {
+    models.Category.findOne({
+      where: {
+        category_name: 'tutoring'
+      },
+      include: [{
+          model: models.SubCategory,
+      }],
+    }).then((cat) => {
+      //console.log(allServices);
+      res.render('subcategory', {allSubCat: cat.SubCategories});
+    });
+  }
 };
 
 module.exports = Controller.registerRouter();
