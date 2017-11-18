@@ -1,7 +1,5 @@
 const express = require('express');
 const models = require('../models/');
-// const passport = require('../middlewares/authentication');
-// const redirect = require('../middlewares/redirect');
 
 const Controller = {
   registerRouter() {
@@ -13,19 +11,35 @@ const Controller = {
     return router;
   },
   index(req, res) {
-    res.render('subcategory')
+    models.Category.findAll({}).then((categories) => {
+      res.render('subcategory', {
+        Category: req.params.category,
+        allCategories: categories
+      });
+    });
   },
   show(req, res) {
-    models.Category.findOne({
-      where: {
-        category_name: 'tutoring'
-      },
-      include: [{
-          model: models.SubCategory,
-      }],
-    }).then((cat) => {
-      //console.log(allServices);
-      res.render('subcategory', {allSubCat: cat.SubCategories});
+    req.params.category = req.params.category.toLowerCase();
+
+    models.Category.findAll({}).then((categories) => {
+      // Single out selected category and pull subcategories
+      models.Category.findOne({
+          where: {
+            category_name: req.params.category
+          },
+          include: [
+            {
+              model: models.SubCategory
+            }
+          ]
+        }).then((subcat) => {
+          //console.log(allServices);
+          res.render('subcategory', {
+            Category: req.params.category,
+            allCategories: categories,
+            allSubCategories: subcat.SubCategories
+          });
+        });
     });
   }
 };

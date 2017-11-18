@@ -11,19 +11,32 @@ const Controller = {
     return router;
   },
   index(req, res) {
-    models.Service.findAll({}).then((allServices) => {
-      res.render('services', {allServices});
+    models.SubCategory.findAll({}).then((subcategories) => {
+      res.render('services', {
+        SubCategory: req.params.subcategory,
+        allSubCategories: subcategories
+      });
     });
-    //res.render('subcategory')
   },
   show(req, res) {
-    models.Service.findAll({
-      where: {
-        SubCategoryId: 1
-      }
-    }).then((allServices) => {
-      //console.log(allServices);
-      res.render('services', {allServices});
+    req.params.subcategory = req.params.subcategory.toLowerCase();
+    models.SubCategory.findAll({}).then((subcategories) => {
+      models.SubCategory.findOne({
+        where: {
+          subcategory_name: req.params.subcategory
+        },
+        include: [
+          {
+            model: models.Service
+          }
+        ]
+      }).then((services) => {
+        res.render('services', {
+          SubCategory: req.params.subcategory,
+          allSubCategories: subcategories,
+          allServices: services.Services
+        });
+      });
     });
   }
 };
