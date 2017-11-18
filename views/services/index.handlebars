@@ -11,11 +11,11 @@
         </li>
         <br />
         <li class="nav-item">
-          <h4 class="h4-responsive" style="text-align: center">All Categories</h4>
+          <h4 class="h4-responsive" style="text-align: center">All SubCategories</h4>
         </li>
-        {{#each allCategories}}
+        {{#each allSubCategories}}
           <li class="nav-item">
-            <a class="nav-link" href="/subcategory/{{this.category_name}}">{{this.category_name}}</a>
+            <a class="nav-link" href="/services/{{this.subcategory_name}}">{{this.subcategory_name}}</a>
           </li>
         {{/each}}
       </ul>
@@ -26,21 +26,21 @@
       <!-- Categories -->
       <div id="categories" class="container-fluid">
         <div class="container">
-          <h1 class="h1-responsive font-bold text-center">{{Category}}</h1>
+          <h1 class="h1-responsive font-bold text-center">{{SubCategory}}</h1>
           <br />
           <div class="row">
-            {{#each allSubCategories}}
+            {{#each allServices}}
               <div class="col-md-4 col-margin">
                 <div class="card text-center">
-                  <div class="card-header card-info">
-                    <h4 class="card-title font-bold text-white text-uppercase">{{this.subcategory_name}}</h4>
+                  <div class="card-header card-success">
+                    <h4 class="card-title font-bold text-white text-uppercase">{{this.service_name}}</h4>
                   </div>
                   <div class="card-body">
-                    <!-- <p class="card-text">{{this.description}}</p> -->
-                    <p class="card-text">Some descriptions we're gonna put into our models</p>
+                    <p class="card-text">{{this.description}}</p>
                   </div>
-                  <div class="card-footer card-info text-right">
-                    <a class="card-link" href="/services/{{this.subcategory_name}}">View Services</a>
+                  <div class="card-footer card-success">
+                    <a class="card-link" href="#">More Info</a>
+                    <a class="card-link" href="#">Quick Request</a>
                   </div>
                 </div>
               </div>
