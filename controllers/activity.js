@@ -26,10 +26,8 @@ const Controller = {
         }
       }) 
       .then((offered_service) => {
-        console.log(offered_service);
         res.render('activity', {servicesreq: requested_service, servicesoff: offered_service});
       });
-      
     });
   },
   show(req, res) {

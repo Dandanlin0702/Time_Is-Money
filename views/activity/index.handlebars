@@ -1,6 +1,26 @@
+<!--/.Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">Time is Money</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> My Account</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <section class="view intro-3 hm-gradient" style="margin-top: 10px">
-    <div class="full-bg-img">
+    <div class="full-bg-img" style="background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 90%);">
         <div class="container flex-center">
         <div class="col-md-6">
             <!--List-->
@@ -20,26 +40,28 @@
                                     <h4 class="service-name">
                                         {{service_name}}
                                     </h4>
-                                    <li>
-                                        Accepted: {{this.is_accepted}}
-                                    </li>
-                                    <li>
-                                        Time: {{this.requested_datetime}}
-                                    </li>
-                                    <li>
-                                        Credit: {{this.num_hours}}
-                                    </li>
+                                    <ol class="text-justify">
+                                        <li>
+                                            <strong>Credit: </strong>{{this.num_hours}}
+                                        </li>
+                                        <li>
+                                            <strong>Accepted: </strong>{{this.is_accepted}}
+                                        </li>
+                                        <li>
+                                            <strong>Time: </strong>{{this.requested_datetime}}
+                                        </li>
+                                    </ol>
                                 </div>
                                 <hr>
                             {{/each}}
                             {{else}}
-                            <div>
-                                <p>
-                                    Oops, you haven't requested any services yet.
-                                    <br>
-                                    <a href="/profile/new">Click Here</a> to start your first order.
-                                </p>
-                            </div>
+                                <div class="text-center">
+                                    <p>
+                                        OOPS. YOUR LIST IS EMPTY
+                                        <br>
+                                        <a href="/profile/new"><strong>CLICK HERE</strong></a> to start your first order.
+                                    </p>
+                                </div>
                         {{/if}}
                     </div>
                 </div>
@@ -60,27 +82,30 @@
                             <!--Body-->
                             {{#each servicesoff}}
                                 <div class="service-preview">
-                                    <h4 class="service-name">
+                                    <h3 class="service-name">
                                         {{service_name}}
-                                    </h4>
-                                    <li>
-                                        Description: {{this.description}}
-                                    </li>
-                                    <li>
-                                        Time: {{this.location}}
-                                    </li>
-                                    <li>
-                                        Credit: {{this.created_at}}
-                                    </li>
+                                    </h3>
+                                    <ol class="text-justify">
+                                        <li>
+                                             <strong>Description: </strong>{{this.description}}
+                                        </li>
+                                        <li>
+                                            <strong>Location: </strong>{{this.location}}
+                                        </li>
+                                        <li>
+                                            <strong>Time: </strong>{{this.created_at}}
+                                        </li>
+                                    </ol>
                                 </div>
                                 <hr>
                             {{/each}}
                             {{else}}
-                                <div>
+                                <div class="text-center">
+                                    <img src="">
                                     <p>
-                                        Oops, you haven't Offered any services yet.
+                                        OOPS. YOUR LIST IS EMPTY
                                         <br>
-                                        <a href="#">Click Here</a> to create an Offer</a>
+                                        <a href="#"><strong>CLICK HERE</strong></a> to create an Offer</a>
                                     </p>
                                 </div>
                         {{/if}}
