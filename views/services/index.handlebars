@@ -7,12 +7,16 @@
     <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <br />
+        <li class="nav-item">
+          <h4 class="h4-responsive" style="text-align: center">All SubCategories</h4>
         </li>
         {{#each allSubCategories}}
-        <li class="nav-item">
-          <a class="nav-link" href="/services/{{this.subcategory_name}}">{{this.subcategory_name}}</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services/{{this.subcategory_name}}">{{this.subcategory_name}}</a>
+          </li>
         {{/each}}
       </ul>
     </nav>
@@ -23,18 +27,23 @@
       <div id="categories" class="container-fluid">
         <div class="container">
           <h1 class="h1-responsive font-bold text-center">{{SubCategory}}</h1>
+          <br />
           <div class="row">
             {{#each allServices}}
-            <div class="col-md-4 col-margin">
-              <div class="card card-body">
-                  <h4 class="card-title">{{this.service_name}}</h4>
-                  <p class="card-text">{{this.description}}</p>
-                  <div class="flex-row">
-                      <a class="card-link">View More</a>
-                      <a class="card-link">Request</a>
+              <div class="col-md-4 col-margin">
+                <div class="card text-center">
+                  <div class="card-header card-success">
+                    <h4 class="card-title font-bold text-white text-uppercase">{{this.service_name}}</h4>
                   </div>
+                  <div class="card-body">
+                    <p class="card-text">{{this.description}}</p>
+                  </div>
+                  <div class="card-footer card-success">
+                    <a class="card-link" href="#">More Info</a>
+                    <a class="card-link" href="#">Quick Request</a>
+                  </div>
+                </div>
               </div>
-            </div>
             {{/each}}
           </div>
         </div>

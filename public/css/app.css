@@ -15,7 +15,6 @@
   }
 }*/
 
-
 /*Elements*/
 * {
   font-family: 'Roboto', sans-serif;
@@ -63,18 +62,6 @@ body {
     background: -webkit-linear-gradient(45deg, rgba(83, 125, 210, 0.3), rgba(178, 30, 123, 0.1) 100%);
     background: -webkit-gradient(linear, 45deg, from(rgba(29, 236, 197, 0.3)), to(rgba(96, 0, 136, 0.3)));
     background: linear-gradient(to 45deg, rgba(29, 236, 197, 0.3), rgba(96, 0, 136, 0.3) 100%);
-}
-
-/*.card {
-    background-color: rgba(229, 228, 255, 0.3);
-}*/
-
-a {
-  color: #0d4252;
-}
-
-a:hover {
-  color: #1d6d85;
 }
 
 /*Navbar*/
