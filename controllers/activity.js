@@ -9,6 +9,7 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', redirect.isLoggedIn, this.index);
+    router.get('/:id', this.show);
 
     return router;
   },
@@ -30,6 +31,9 @@ const Controller = {
       });
       
     });
+  },
+  show(req, res) {
+    res.render('profile/offer_form_show');
   },
 };
 

@@ -12,24 +12,35 @@
                         <hr class="hr-light">
                     </div>
                     <div class="text-justify">
-                        <!--Body-->
-                        {{#each servicesreq}}
-                            <div class="service-preview">
-                                <h4 class="service-name">
-                                    {{service_name}}
-                                </h4>
-                                <li>
-                                    Accepted: {{this.is_accepted}}
-                                </li>
-                                <li>
-                                    Time: {{this.requested_datetime}}
-                                </li>
-                                <li>
-                                    Credit: {{this.num_hours}}
-                                </li>
+                        {{!-- only output following info requested services exists --}}
+                        {{#if servicesreq}} 
+                            <!--Body-->
+                            {{#each servicesreq}}
+                                <div class="service-preview">
+                                    <h4 class="service-name">
+                                        {{service_name}}
+                                    </h4>
+                                    <li>
+                                        Accepted: {{this.is_accepted}}
+                                    </li>
+                                    <li>
+                                        Time: {{this.requested_datetime}}
+                                    </li>
+                                    <li>
+                                        Credit: {{this.num_hours}}
+                                    </li>
+                                </div>
+                                <hr>
+                            {{/each}}
+                            {{else}}
+                            <div>
+                                <p>
+                                    Oops, you haven't requested any services yet.
+                                    <br>
+                                    <a href="/profile/new">Click Here</a> to start your first order.
+                                </p>
                             </div>
-                            <hr>
-                        {{/each}}
+                        {{/if}}
                     </div>
                 </div>
             </div>
@@ -45,24 +56,34 @@
                         <hr class="hr-light">
                     </div>
                     <div class="text-justify">
-                        <!--Body-->
-                        {{#each servicesoff}}
-                            <div class="service-preview">
-                                <h4 class="service-name">
-                                    {{service_name}}
-                                </h4>
-                                <li>
-                                    Description: {{this.description}}
-                                </li>
-                                <li>
-                                    Time: {{this.location}}
-                                </li>
-                                <li>
-                                    Credit: {{this.created_at}}
-                                </li>
-                            </div>
-                            <hr>
-                        {{/each}}
+                        {{#if servicesoff}}
+                            <!--Body-->
+                            {{#each servicesoff}}
+                                <div class="service-preview">
+                                    <h4 class="service-name">
+                                        {{service_name}}
+                                    </h4>
+                                    <li>
+                                        Description: {{this.description}}
+                                    </li>
+                                    <li>
+                                        Time: {{this.location}}
+                                    </li>
+                                    <li>
+                                        Credit: {{this.created_at}}
+                                    </li>
+                                </div>
+                                <hr>
+                            {{/each}}
+                            {{else}}
+                                <div>
+                                    <p>
+                                        Oops, you haven't Offered any services yet.
+                                        <br>
+                                        <a href="#">Click Here</a> to create an Offer</a>
+                                    </p>
+                                </div>
+                        {{/if}}
                     </div>
                 </div>
             </div>
