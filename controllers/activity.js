@@ -9,20 +9,26 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', redirect.isLoggedIn, this.index);
-    router.get('/', this.show);
+
     return router;
   },
   index(req, res) {
-    res.render('activity', { user: req.user, success: req.flash('success')});
-  },
-  show (req, res) {
-    models.Service.findAll({
+    models.RequestedService.findAll({
       where: {
-        UserId: user.id,
+        UserId: req.user.id,
       }
     }) 
     .then((requested_service) => {
-      res.render('activity', {services: requested_service});
+        models.Service.findAll({
+        where: {
+          UserId: req.user.id,
+        }
+      }) 
+      .then((offered_service) => {
+        console.log(offered_service);
+        res.render('activity', {servicesreq: requested_service, servicesoff: offered_service});
+      });
+      
     });
   },
 };
