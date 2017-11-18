@@ -1,5 +1,5 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-  <a class="navbar-brand" href="/">Time is Money</a>
+  <a class="navbar-brand" href="/" style="color: #fff">Time is Money</a>
 </nav>
 
 <div class="container-fluid">
@@ -9,9 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" href="/">Home</a>
         </li>
-        {{#each allSubCat}}
+        {{#each allCategories}}
         <li class="nav-item">
-          <a class="nav-link" href="#">{{this.subcategory_name}}</a>
+          <a class="nav-link" href="/subcategory/{{this.category_name}}">{{this.category_name}}</a>
         </li>
         {{/each}}
       </ul>
@@ -22,9 +22,9 @@
       <!-- Categories -->
       <div id="categories" class="container-fluid">
         <div class="container">
-          <h1 class="h1-responsive font-bold text-center">Pet Care</h1>
+          <h1 class="h1-responsive font-bold text-center">{{Category}}</h1>
           <div class="row">
-            {{#each allSubCat}}
+            {{#each allSubCategories}}
             <div class="col-md-4 col-margin">
               <div class="card card-body">
                   <h4 class="card-title">{{this.subcategory_name}}</h4>
