@@ -19,16 +19,16 @@
   </div>
 </nav>
 
-<section class="view intro-3 hm-gradient" style="margin-top: 10px, font-family: helvetica, verdana, palatino">
-    <div class="full-bg-img" style="background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 90%);">
+<section class="view intro-3 hm-gradient" style="margin-top: 10px">
+    <div class="full-bg-img">
         <div class="container flex-center">
         <div class="col-md-6">
             <!--List-->
-            <div class="card wow fadeInRight" data-wow-delay="0.5s">
+            <div class="card wow fadeInRight" data-wow-delay="0.5s" style="background-color: rgba(229, 228, 255, 0.3)">
                 <div class="card-body">
                     <!--Header-->
                     <div class="text-center">
-                        <h3 class="white-text"><i class="fa fa-server white-text"></i> Services You Requested</h3>
+                        <h3><i class="fa fa-server"></i> Services You Requested</h3>
                         <hr class="hr-light">
                     </div>
                     <div class="text-justify">
@@ -42,13 +42,13 @@
                                     </h4>
                                     <ol class="text-justify">
                                         <li>
-                                            <strong>Credit: </strong>{{this.num_hours}}
+                                            Credit: {{this.num_hours}}
                                         </li>
                                         <li>
-                                            <strong>Accepted: </strong>{{this.is_accepted}}
+                                            Accepted: {{this.is_accepted}}
                                         </li>
                                         <li>
-                                            <strong>Time: </strong>{{this.requested_datetime}}
+                                            Time: {{this.requested_datetime}}
                                         </li>
                                     </ol>
                                 </div>
@@ -70,11 +70,11 @@
         </div>
 
         <div class="col-md-6">                        <!--Form-->
-            <div class="card wow fadeInRight" data-wow-delay="0.5s">
+            <div class="card wow fadeInRight" data-wow-delay="0.5s" style="background-color: rgba(229, 228, 255, 0.3)">
                 <div class="card-body">
                     <!--Header-->
                     <div class="text-center">
-                        <h3 class="white-text"><i class="fa fa-server white-text"></i> Services You Offered</h3>
+                        <h3><i class="fa fa-server"></i> Services You Offered</h3>
                         <hr class="hr-light">
                     </div>
                     <div class="text-justify">
@@ -87,13 +87,13 @@
                                     </h3>
                                     <ol class="text-justify">
                                         <li>
-                                             <strong>Description: </strong>{{this.description}}
+                                             Description: {{this.description}}
                                         </li>
                                         <li>
-                                            <strong>Location: </strong>{{this.location}}
+                                            Location: {{this.location}}
                                         </li>
                                         <li>
-                                            <strong>Time: </strong>{{this.created_at}}
+                                            Time: {{this.created_at}}
                                         </li>
                                     </ol>
                                 </div>
