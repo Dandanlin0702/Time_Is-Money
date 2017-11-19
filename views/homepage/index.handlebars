@@ -11,24 +11,27 @@
           <a class="nav-link" href="#about">How It Works</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#categories">Marketplace</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#team">About Us</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         {{#if cur_user}}
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="/profile">Hello, {{cur_user.username}}</a>
-        </li>
-        <li class="nav-item">
-          <a href="/logout" class="btn btn-deep-orange btn-sm wow fadeInRight" rel="nofollow">Log Out</a>
-        </li>
-        {{ else }}
-        <li class="nav-item">
-          <a href="/signup" class="btn btn-light-green btn-sm wow fadeInRight" rel="nofollow">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a href="/login" class="btn btn-primary btn-sm wow fadeInRight" rel="nofollow">Log In</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" href="/profile">Hello, {{cur_user.username}}</a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="btn btn-deep-orange btn-sm wow fadeInRight" rel="nofollow">Log Out</a>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a href="/signup" class="btn btn-light-green btn-sm wow fadeInRight" rel="nofollow">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="btn btn-primary btn-sm wow fadeInRight" rel="nofollow">Log In</a>
+          </li>
         {{/if}}
       </ul>
     </div>
@@ -72,19 +75,19 @@
     <div class="row">
       <div class="col-md-3">
         <h4 class="h4-responsive">Tutoring</h4>
-        <a href="/subcategory"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+        <a href="/subcategory/tutoring"><img src="https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
       <div class="col-md-3">
         <h4 class="h4-responsive">Childcare</h4>
-        <a href="/subcategory"><img src="https://images.pexels.com/photos/225017/pexels-photo-225017.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+        <a href="/subcategory/babysitting"><img src="https://images.pexels.com/photos/225017/pexels-photo-225017.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
       <div class="col-md-3">
         <h4 class="h4-responsive">Petcare</h4>
-        <a href="/subcategory"><img src="https://images.pexels.com/photos/5777/dog-pet-cute-sweet.jpg?h=350&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+        <a href="/subcategory/pet_services"><img src="https://images.pexels.com/photos/5777/dog-pet-cute-sweet.jpg?h=350&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
       <div class="col-md-3">
         <h4 class="h4-responsive">Housecare</h4>
-        <a href="/subcategory"><img src="https://images.pexels.com/photos/358572/pexels-photo-358572.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
+        <a href="/subcategory/home_care"><img src="https://images.pexels.com/photos/358572/pexels-photo-358572.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb" class="categories-img img-fluid"></a>
       </div>
     </div>
   </div>
@@ -96,13 +99,13 @@
     <div class="row wow fadeIn">
       <div class="col-lg-6 offset-lg-6">
         <h1 class="h1-responsive font-bold">How It Works</h2>
-        <p class="flex-center">Lorem ipsum dolor sit amet, nulla mundi tractatos ne his, cu eum delenit voluptua philosophia. Vis natum appareat posidonium ne, eius oportere cu ius. Mea nemore suscipit eleifend ut, nam ex aeterno periculis. Virtute laboramus argumentum
+          <p class="flex-center">Lorem ipsum dolor sit amet, nulla mundi tractatos ne his, cu eum delenit voluptua philosophia. Vis natum appareat posidonium ne, eius oportere cu ius. Mea nemore suscipit eleifend ut, nam ex aeterno periculis. Virtute laboramus argumentum
           est at, cum ea tempor placerat pertinacia. Nibh aliquip tamquam mel ea, vel ex nonumy fuisset, aliquip veritus apeirian mea cu. In case causae nominavi usu.
           <br /><br /> Ludus suavitate nam id, justo aliquip contentiones sed ad, vidisse omittam fastidii pro ei. Ex homero facilisis mel. Duo in quod accusam, id vel doming nemore, cum odio possim ad. Nobis solet at mel, vim noster euismod id, te
           nec augue suscipit. Ex mei legimus officiis vituperatoribus. Ut eos primis essent, pro veri sanctus convenire te. Vis eu choro patrioque splendide. Sit detracto molestie scriptorem ea, vidisse placerat assueverit nec ne.
           <br /><br /> Ludus suavitate nam id, justo aliquip contentiones sed ad, vidisse omittam fastidii pro ei. Ex homero facilisis mel. Duo in quod accusam, id vel doming nemore, cum odio possim ad.</p>
       </div>
-    </div>
+  </div>
   </div>
 </div>
 <!-- ./How It Works -->
