@@ -14,21 +14,22 @@ const Controller = {
     return router;
   },
   index(req, res) {
-    models.RequestedService.findAll({
-      where: {
-        UserId: req.user.id,
-      }
-    }) 
-    .then((requested_service) => {
-        models.Service.findAll({
+
+     //offer service
+     models.Service.findAll({
         where: {
-          UserId: req.user.id,
+           UserId: req.user.id,
         }
-      }) 
-      .then((offered_service) => {
-        res.render('activity', {servicesreq: requested_service, servicesoff: offered_service});
-      });
-    });
+     }).then((offered_service) => {
+        models.RequestedService.findAll({
+           include: [{model: models.Service}],
+           where: {
+             UserId: req.user.id,
+          }
+       }).then((services) => {
+          res.render('activity', {servicesreq: services, servicesoff: offered_service});
+       });
+     });
   },
   show(req, res) {
     res.render('profile/offer_form_show');
