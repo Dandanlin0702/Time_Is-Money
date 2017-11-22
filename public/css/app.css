@@ -38,6 +38,9 @@ body {
   background-image: url("/img/wet_snow.png");
   background-repeat: repeat;
 }
+ol {
+  list-style: none;
+}
 
 /*Classes*/
 .view {
@@ -56,6 +59,10 @@ body {
 .intro-3 {
   background: url("https://static.pexels.com/photos/541101/pexels-photo-541101.jpeg") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .hm-gradient .full-bg-img {
