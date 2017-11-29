@@ -6,7 +6,7 @@ const Controller = {
   registerRouter() {
     const router = express.Router();
 
-    router.get('/', this.index);
+    router.get('/', redirect.ifLoggedIn, this.index);
     router.post('/', this.login);
 
     return router;

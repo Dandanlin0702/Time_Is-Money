@@ -1,12 +1,13 @@
 const express = require('express');
 const models = require('../models/');
 const passport = require('../middlewares/authentication');
+const redirect = require('../middlewares/redirect');
 
 const Controller = {
   registerRouter() {
     const router = express.Router();
 
-    router.get('/', this.index);
+    router.get('/', redirect.ifLoggedIn, this.index);
     router.post('/', this.signup);
 
     return router;
