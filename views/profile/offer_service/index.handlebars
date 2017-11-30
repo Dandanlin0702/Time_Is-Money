@@ -1,14 +1,30 @@
 <!--/.Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark info-color scrolling-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark info-color">
   <div class="container">
     <a class="navbar-brand" href="/">Time is Money</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> My Account</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
 <div class="container-fluid">
   <div class="container">
     <div class="col-md-12">
       <div class="mt-4 card z-depth-3">
-        <div class="card-header info-color text-center text-white">
+        <div class="card-header info-color-dark text-center text-white">
           <h2 class="h2-responsive font-bold">Offer a Service</h2>
         </div>
         <div id="service-form" class="card-body">
