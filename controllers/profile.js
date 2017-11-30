@@ -24,7 +24,7 @@ const Controller = {
     .then((categories) => {
       models.SubCategory.findAll()
       .then((subcategories) => {
-        res.render('profile/offer_form', { user: req.user, categories: categories, subcategories: null});
+        res.render('profile/offer_service', { user: req.user, categories: categories, subcategories: null});
       })
     });
   },
@@ -48,7 +48,7 @@ const Controller = {
       }
     })
     .then((subcategories) => {
-      res.render('profile/subcategory_select', {layout: false, subcategories: subcategories});
+      res.render('profile/offer_service/subcategory_select', {layout: false, subcategories: subcategories});
       //res.render('profile/subcategory_select', {layout: false});
     });
     // res.render('profile/subcategory_select', {layout: false});

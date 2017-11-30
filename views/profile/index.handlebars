@@ -21,59 +21,42 @@
 
 <div id="profile" class="view hm-black-light">
   <div class="full-bg-img flex-center">
-    <ul id="banner" class="wow fadeInUp">
-      <li>
-        <h1 class="h1-responsive font-up font-bold">Hello {{user.username}}!</h1>
-      </li>
-      <li>
-        <p class="px-5 pb-4">Lorem ipsum dolor sit amet, nulla mundi tractatos ne his, cu eum delenit voluptua philosophia. Vis natum appareat posidonium ne, eius oportere cu ius. Mea nemore suscipit eleifend ut, nam ex aeterno periculis. Virtute laboramus argumentu est at,
-          cum ea tempor placerat pertinacia. Nibh aliquip tamquam mel ea, vel ex nonumy fuisset, aliquip veritus apeirian mea cu. In case causae nominavi usu. Ludus suavitate nam id, justo aliquip contentiones sed ad, vidisse omittam fastidii pro ei.
-          Ex homero facilisis mel. Duo in quod accusam, id vel doming nemore, cum odio possim ad. Nobis solet at mel, vim noster euismod id, te nec augue suscipit.</p>
-      </li>
-      <li>
-        <button class="btn btn-outline-white"><h1 class="h2-responsive yellow-text"><i class="fa fa-clock-o" aria-hidden="true"></i> {{user.balance}} </h1></button>
-    </ul>
-  </div>
-</div>
-
-<div id="user-info" class="container-fluid">
-  <div class="container">
-    <div class="flex-center mask">
-      <div class="col-md-5">
-        <!--Panel-->
-        <div class="mt-4 card card-body z-depth-3">
-          <div class="text-center">
-            <li>
-              <h2 class="h2-responsive black-text font-bold">Check Your Current Services</h2></li>
-            <hr>
-            <!-- <li><h4 class="black-text h4-responsive">Dog Walking</h4></li>
-          <li><h4 class="black-text h4-responsive">Toddler Sitting (Ages 3-7)</h4></li>
-          <li><h4 class="black-text h4-responsive">Lawn Mowing</h4></li>
-          <hr> -->
-            <li><a href="/profile/new" class="mb-1 btn btn-outline-black wow fadeIn" data-wow-delay="0.2s">Offer Service</a></li>
+    <div class="col-md-5">
+      <ul id="banner" class="wow fadeInUp">
+        <li>
+          <h1 class="h1-responsive font-up">Hello {{user.username}}!</h1>
+        </li>
+        <li>
+          <p>Lorem ipsum dolor sit amet, nulla mundi tractatos ne his, cu eum delenit voluptua philosophia. Vis natum appareat posidonium ne, eius oportere cu ius. Mea nemore suscipit eleifend ut, nam ex aeterno periculis. Virtute laboramus argumentu est
+            at, cum ea tempor placerat pertinacia. Nibh aliquip tamquam mel ea, vel ex nonumy fuisset, aliquip veritus apeirian mea cu. In case causae nominavi usu. Ludus suavitate nam id, justo aliquip contentiones sed ad, vidisse omittam fastidii pro
+            ei.</p>
+        </li>
+        <li>
+          <button class="btn  amber lighten-1"><h1 class="h2-responsive"><i class="fa fa-clock-o" aria-hidden="true"></i> Current Balance: {{user.balance}}</h1></button>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <ul id="banner" class="wow fadeInUp">
+        <li>
+          <div class="mt-4 card card-body z-depth-3">
+            <div class="text-center">
+              <h2 class="h2-responsive black-text font-bold">Make Some Time</h2>
+              <hr>
+              <a href="/profile/new" class="mb-1 btn btn-outline-black">Offer Service</a>
+            </div>
           </div>
-        </div>
-      </div>
-      <!--/.Panel-->
-      <!--Panel-->
-      <div class="col-md-5 offset-md-2">
-        <div class="mt-4 card card-body z-depth-3">
-          <div class="text-center">
-            <li>
-              <h2 class="h2-responsive black-text font-bold">View Your Request History</h2></li>
-            <hr>
-            <li><a href="/activity" class="mb-1 btn btn-outline-black wow fadeIn" data-wow-delay="0.2s" target="_blank">My Requests</a></li>
+        </li>
+        <li>
+          <div class="mt-4 card card-body z-depth-3">
+            <div class="text-center">
+              <h2 class="h2-responsive black-text font-bold">View Your Requests</h2>
+              <hr>
+              <a href="/activity" class="mb-1 btn btn-outline-black">Requested Services</a>
+              <a href="/activity" class="mb-1 btn btn-outline-black">Offered Services</a>
+            </div>
           </div>
-        </div>
-        <!--/.Panel-->
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-
-<!--Footer-->
-<footer class="footer center-on-small-only">
-  <a class="up-arrow text-white" href="#profile" data-toggle="tooltip" title="To Top">
-      <i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
-</footer>
-<!--/.Footer-->

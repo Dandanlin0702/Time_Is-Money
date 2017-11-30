@@ -13,23 +13,20 @@ const app = express();
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(flash());
 
 const expressSession = require('express-session');
 const passport = require('./middlewares/authentication');
 
-app.use(expressSession (({secret: 'keyboard cat'})));
+app.use(expressSession(({secret: 'keyboard cat'})));
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static('./public'));
 
 const exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({
-  layoutsDir: './views/layouts',
-  defaultLayout: 'main',
-}));
+app.engine('handlebars', exphbs({layoutsDir: './views/layouts', defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);
 
@@ -39,9 +36,8 @@ app.use(viewHelpers.register());
 const controllers = require('./controllers');
 app.use(controllers);
 
-models.sequelize.sync({force: false})
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is up and running on port: ${PORT}`)
-    });
+models.sequelize.sync({force: false}).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is up and running on port: ${PORT}`)
   });
+});
