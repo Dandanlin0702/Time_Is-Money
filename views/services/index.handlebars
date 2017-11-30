@@ -7,7 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         {{#each allSubCategories}}
-          <a class="nav-link" href="/services/{{this.subcategory_name}}">{{this.subcategory_name}}</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/services/{{this.subcategory_name}}">{{this.subcategory_name}}</a>
+          </li>
         {{/each}}
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -35,13 +37,13 @@
           {{#each allServices}}
             <div class="col-md-4 col-margin">
               <div class="card text-center">
-                <div class="card-header card-success">
+                <div class="card-header teal accent-3">
                   <h4 class="card-title font-bold text-white text-uppercase">{{this.service_name}}</h4>
                 </div>
                 <div class="card-body">
                   <p class="card-text">{{this.description}}</p>
                 </div>
-                <div class="card-footer card-success">
+                <div class="card-footer amber accent-2">
                   <a class="card-link" href="#">More Info</a>
                   <a class="card-link" href="#">Quick Request</a>
                 </div>

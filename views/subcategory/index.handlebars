@@ -11,8 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         {{#each allCategories}}
-          <a class="nav-link" href="/subcategory/{{this.category_name}}">{{this.category_name}}</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/subcategory/{{this.category_name}}">{{this.category_name}}</a>
         {{/each}}
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item dropdown">
@@ -39,14 +41,14 @@
           {{#each allSubCategories}}
             <div class="col-md-4 col-margin">
               <div class="card text-center">
-                <div class="card-header card-info">
+                <div class="card-header cyan accent-3">
                   <h4 class="card-title font-bold text-white text-uppercase">{{this.subcategory_name}}</h4>
                 </div>
                 <div class="card-body">
                   <!-- <p class="card-text">{{this.description}}</p> -->
                   <p class="card-text">Some descriptions we're gonna put into our models</p>
                 </div>
-                <div class="card-footer card-info text-right">
+                <div class="card-footer pink darken-2 text-right">
                   <a class="card-link" href="/services/{{this.subcategory_name}}">View Services</a>
                 </div>
               </div>
