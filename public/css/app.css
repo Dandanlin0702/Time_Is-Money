@@ -215,6 +215,15 @@ ol {
   background-size: cover;
 }
 
+#team-links {
+  font-size: 120%;
+  color: #fff;
+}
+
+#team-links a:hover {
+  color: #11f15d;
+}
+
 #profile {
   min-height: 100%;
   background: url("https://images.pexels.com/photos/597331/pexels-photo-597331.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb") no-repeat center center;
