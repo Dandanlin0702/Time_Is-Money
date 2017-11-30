@@ -216,7 +216,7 @@ ol {
 }
 
 #profile {
-  max-height: 75%;
+  min-height: 100%;
   background: url("https://images.pexels.com/photos/597331/pexels-photo-597331.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -236,4 +236,8 @@ ol {
 #service-form{
   padding-top: 30px;
   padding-left: 50px;
+}
+
+#services {
+  padding: 30px 0px;
 }
