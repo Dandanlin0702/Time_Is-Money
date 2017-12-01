@@ -8,7 +8,7 @@
       <ul class="navbar-nav mr-auto">
         {{#each allSubCategories}}
           <li class="nav-item">
-            <a class="nav-link" href="/services/{{{toURI this.subcategory_name}}}">{{this.subcategory_name}}</a>
+            <a class="nav-link" href="/services/{{../Category}}/{{ this.subcategory_name}}">{{this.subcategory_name}}</a>
           </li>
         {{/each}}
       </ul>
@@ -36,7 +36,7 @@
         <div class="card-deck">
           {{#each allServices}}
           <div class="col-md-4">
-            <a href="/services/{{../SubCategory}}/{{this.id}}">
+            <a href="/services/{{../Category}}/{{../SubCategory}}/{{this.id}}">
               <div class="card text-center">
                 <div class="card-header teal accent-3">
                   <h4 class="card-title font-bold text-white">{{this.service_name}}</h4>
