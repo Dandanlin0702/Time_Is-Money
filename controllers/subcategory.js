@@ -19,8 +19,6 @@ const Controller = {
     });
   },
   show(req, res) {
-    req.params.category = req.params.category.toLowerCase();
-
     models.Category.findAll({}).then((categories) => {
       // Single out selected category and pull subcategories
       models.Category.findOne({

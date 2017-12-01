@@ -26,7 +26,16 @@ app.use(passport.session());
 app.use(express.static('./public'));
 
 const exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({layoutsDir: './views/layouts', defaultLayout: 'main'}));
+const hbs = exphbs.create({
+  layoutsDir: './views/layouts',
+  defaultLayout: 'main',
+  helpers: {
+    toURI: (uri) => { return encodeURI(uri); }
+    }
+  });
+
+// app.engine('handlebars', exphbs({layoutsDir: './views/layouts', defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);
 
