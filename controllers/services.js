@@ -21,11 +21,10 @@ const Controller = {
     });
   },
   show(req, res) {
-    req.params.subcategory = req.params.subcategory.toLowerCase();
     models.SubCategory.findAll({}).then((subcategories) => {
       models.SubCategory.findOne({
         where: {
-          subcategory_name: req.params.subcategory
+          subcategory_name: decodeURI(req.params.subcategory)
         },
         include: [
           {
