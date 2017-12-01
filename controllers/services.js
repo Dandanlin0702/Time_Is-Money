@@ -7,6 +7,8 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:subcategory', this.show);
+    router.get('/:subcategory/:service_id', this.show_detail);
+    router.post('/:subcategory/:service_id', this.create_request);
 
     return router;
   },
@@ -38,6 +40,34 @@ const Controller = {
         });
       });
     });
+  },
+  show_detail(req, res) {
+    service_id = req.params.service_id;
+    models.Service.findOne({
+      where: {
+        id: service_id
+      },
+      include:[
+        {
+          model: models.SubCategory,
+          include:[
+            {
+              model: models.Category
+            }
+          ]
+        },
+        {
+          model: models.User
+        }
+      ]
+    }).then((service) => {
+      //res.send(service);
+      res.render('service_detail', {service: service});
+    })
+  },
+  create_request(req, res) {
+    datatime = req.body.datatime;
+    res.send(datatime);
   }
 };
 

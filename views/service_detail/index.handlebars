@@ -1,0 +1,28 @@
+<div>
+  <form action="/services/{{service.SubCategory.Category.category_name}}/{{service.SubCategory.subcategory_name}}" method="POST" class="form-horizontal">
+    <h1>{{service.service_name}}</h1>
+
+    by {{service.User.username}}
+
+    <div>
+      <b>Detail: </b> {{service.description}}
+    </div>
+
+    <div>
+      <b>Location: </b> {{service.location}}
+    </div>
+
+    <div style="width: 40%;">
+      <input id="datetime" type="datetime-local" name="datetime" value="2017-01-01T00:00">
+    </div>
+
+    <div class="dropdown-menu" name ="num_hours" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" value="1">1</a>
+      <a class="dropdown-item" value="2">2</a>
+      <a class="dropdown-item" value="3">3</a>
+      <a class="dropdown-item" value="4">4</a>
+      <a class="dropdown-item" value="5">5</a>
+    </div>
+</form>
+
+</div>
