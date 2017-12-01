@@ -37,22 +37,21 @@
       <div class="container">
         <h1 class="h1-responsive font-bold text-center">{{Category}}</h1>
         <br />
-        <div class="row">
+        <div class="card-deck">
           {{#each allSubCategories}}
-            <div class="col-md-4 col-margin">
+          <div class="col-md-4">
+            <a class="card-link" href="/services/{{this.subcategory_name}}">
               <div class="card text-center">
                 <div class="card-header cyan accent-3">
-                  <h4 class="card-title font-bold text-white text-uppercase">{{this.subcategory_name}}</h4>
+                  <h4 class="card-title font-bold text-white">{{this.subcategory_name}}</h4>
                 </div>
                 <div class="card-body">
                   <!-- <p class="card-text">{{this.description}}</p> -->
                   <p class="card-text">Some descriptions we're gonna put into our models</p>
                 </div>
-                <div class="card-footer pink darken-2 text-right">
-                  <a class="card-link" href="/services/{{this.subcategory_name}}">View Services</a>
-                </div>
               </div>
-            </div>
+            </a>
+          </div>
           {{/each}}
         </div>
       </div>

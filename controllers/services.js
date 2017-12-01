@@ -7,6 +7,7 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:subcategory', this.show);
+    // router.get('/:subcategory/:service_id,' this.serviceInfo);
 
     return router;
   },
@@ -19,11 +20,10 @@ const Controller = {
     });
   },
   show(req, res) {
-    req.params.subcategory = req.params.subcategory.toLowerCase();
     models.SubCategory.findAll({}).then((subcategories) => {
       models.SubCategory.findOne({
         where: {
-          subcategory_name: req.params.subcategory
+          subcategory_name: decodeURI(req.params.subcategory)
         },
         include: [
           {
