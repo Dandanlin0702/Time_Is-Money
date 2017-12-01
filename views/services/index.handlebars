@@ -33,22 +33,20 @@
       <div class="container">
         <h1 class="h1-responsive font-bold text-center">{{SubCategory}}</h1>
         <br />
-        <div class="row">
+        <div class="card-deck">
           {{#each allServices}}
-            <div class="col-md-4 col-margin">
+          <div class="col-md-4">
+            <a href="/services/{{../SubCategory}}/{{this.id}}">
               <div class="card text-center">
                 <div class="card-header teal accent-3">
-                  <h4 class="card-title font-bold text-white text-uppercase">{{this.service_name}}</h4>
+                  <h4 class="card-title font-bold text-white">{{this.service_name}}</h4>
                 </div>
                 <div class="card-body">
                   <p class="card-text">{{this.description}}</p>
                 </div>
-                <div class="card-footer amber accent-2">
-                  <a class="card-link" href="/services/{{../SubCategory}}/{{this.id}}">More Info</a>
-                  <a class="card-link" href="#">Quick Request</a>
-                </div>
               </div>
-            </div>
+            </a>
+          </div>
           {{/each}}
         </div>
       </div>
