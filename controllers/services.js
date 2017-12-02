@@ -8,7 +8,8 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:category/:subcategory', this.show);
-    router.get('/:category/:subcategory/:service_id', this.serviceInfo);
+    router.get('/:category/:subcategory/:service_id', this.show_detail);
+    router.post('/:category/:subcategory/:service_id', this.create_request);
 
     return router;
   },
@@ -51,8 +52,47 @@ const Controller = {
       });
     });
   },
-  serviceInfo(req, res) {
-    res.send("This is service info!");
+  show_detail(req, res) {
+    service_id = req.params.service_id;
+    models.Service.findOne({
+      where: {
+        id: service_id
+      },
+      include:[
+        {
+          model: models.SubCategory,
+          include:[
+            {
+              model: models.Category
+            }
+          ]
+        },
+        {
+          model: models.User
+        }
+      ]
+    }).then((service) => {
+      //res.send(service);
+      res.render('service_detail', {service: service});
+    })
+  },
+  create_request(req, res) {
+    datetime = req.body.datetime;
+    num_hours = req.body.num_hours;
+    user_id = req.user.id;
+    service_id = req.body.service_id;
+
+    //res.send(datetime)
+    models.RequestedService.create({
+      is_accepted: 0,
+      requested_datetime: datetime,
+      num_hours: parseInt(num_hours),
+      UserId: user_id,
+      ServiceId: service_id
+    })
+    .then((requestservice) => {
+      res.redirect("/profile");
+    });
   }
 };
 
