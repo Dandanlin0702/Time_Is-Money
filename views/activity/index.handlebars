@@ -39,6 +39,7 @@
                   <th>Credit</th>
                   <th>Status</th>
                   <th>Time</th>
+                  <th>Remove</th>
                 </tr>
               </thead>
               <!--Body-->
@@ -46,9 +47,14 @@
                 <tbody>
                   <tr>
                     <td>{{Service.service_name}}</td>
-                    <td>{{this.num_hours}}</td>
-                    <td>{{this.is_accepted}}</td>
-                    <td>{{this.requested_datetime}}</td>
+                    <td>{{num_hours}}</td>
+                    <td>{{is_accepted}}</td>
+                    <td>{{requested_datetime}}</td>
+                    <td>
+                       <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
+                          <button type="submit" class="btn btn-default" onclick="return confirm('Are you sure you would like to accept this reply as your favor?');">Delete</button>
+                     </form>
+                    </td>
                   </tr>
                 </tbody>
               {{/each}}
@@ -59,7 +65,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <td><a href="/profile/new"><strong>CLICK HERE</strong></a> to offer your first service!</td>
+                  <td><a href="#"><strong>CLICK HERE</strong></a> to request your first service!</td>
                     </tbody>
             {{/if}}
           </table>
@@ -73,7 +79,7 @@
       <div class="mt-4 card z-depth-3" style="padding: 40px 30px 0px 30px;">
         <div clas="card-header">
           <div class="text-center">
-            <h2 class="h2-responsive"><i class="fa fa-server"></i>Offered Services</h2>
+            <h2 class="h2-responsive"><i class="fa fa-server"></i> Offered Services</h2>
           </div>
         </div>
         <div class="card-body">
@@ -85,6 +91,7 @@
                   <th>Description</th>
                   <th>Location</th>
                   <th>Time</th>
+                  <th>Remove Record</th>
                 </tr>
               </thead>
               <!--Body-->
@@ -92,9 +99,15 @@
                 <tbody>
                   <tr>
                     <td>{{service_name}}</td>
-                    <td>{{this.description}}</td>
-                    <td>{{this.location}}</td>
-                    <td>{{this.createdAt}}</td>
+                    <td>{{description}}</td>
+                    <td>{{location}}</td>
+                    <td>{{createdAt}}</td>
+                    <td>{{id}}</td>
+                    <td>
+                       <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
+                          <button type="submit" class="btn btn-default">Delete</button>
+                     </form>
+                    </td>
                   </tr>
                 </tbody>
               {{/each}}
@@ -105,8 +118,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <td><a href="#"><strong>CLICK HERE</strong></a> to request your first service!</td>
-                    </tbody>
+                   <td><a href="/profile/new"><strong>CLICK HERE</strong></a> to offer your first service!</td>
+                </tbody>
             {{/if}}
           </table>
         </div>
