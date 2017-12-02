@@ -1,5 +1,5 @@
 <div>
-  <form action="/services/{{service.SubCategory.Category.category_name}}/{{service.SubCategory.subcategory_name}}" method="POST" class="form-horizontal">
+  <form action="/services/{{{toURI service.SubCategory.subcategory_name}}}/{{service.id}}" method="POST" class="form-horizontal">
     <h1>{{service.service_name}}</h1>
 
     by {{service.User.username}}
@@ -16,13 +16,21 @@
       <input id="datetime" type="datetime-local" name="datetime" value="2017-01-01T00:00">
     </div>
 
-    <div class="dropdown-menu" name ="num_hours" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" value="1">1</a>
-      <a class="dropdown-item" value="2">2</a>
-      <a class="dropdown-item" value="3">3</a>
-      <a class="dropdown-item" value="4">4</a>
-      <a class="dropdown-item" value="5">5</a>
+    <div>
+      <b> Number of Hours: </b>
+      <select class="dropdown" name="num_hours">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </div>
+
+    <input type="hidden" name="user_id" value="{{service.UserId}}">
+    <input type="hidden" name="service_id" value="{{service.id}}">
+
+    <button id="submit" type="submit" class="btn btn-default btn-success">Request!</button>
 </form>
 
 </div>

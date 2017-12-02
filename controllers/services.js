@@ -65,8 +65,22 @@ const Controller = {
     })
   },
   create_request(req, res) {
-    datatime = req.body.datatime;
-    res.send(datatime);
+    datetime = req.body.datetime;
+    num_hours = req.body.num_hours;
+    user_id = req.body.user_id;
+    service_id = req.body.service_id;
+
+    //res.send(datetime)
+    models.RequestedService.create({
+      is_accepted: 0,
+      requested_datetime: datetime,
+      num_hours: parseInt(num_hours),
+      UserId: user_id,
+      ServiceId: service_id
+    })
+    .then((requestservice) => {
+      res.redirect("/profile");
+    });
   }
 };
 
