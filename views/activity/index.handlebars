@@ -50,8 +50,9 @@
                     <td>{{num_hours}}</td>
                     <td>{{is_accepted}}</td>
                     <td>{{requested_datetime}}</td>
+                    <td>{{ServiceId}}</td>
                     <td>
-                       <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
+                       <form name="delete-post" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
                           <button type="submit" class="btn btn-default" onclick="return confirm('Are you sure you want to delete this record?');">Delete</button>
                      </form>
                     </td>
@@ -65,7 +66,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <td><a href="/category/subcategory/"><strong>CLICK HERE</strong></a> to request your first service!</td>
+                  <td><a href="#"><strong>CLICK HERE</strong></a> to request your first service!</td>
                     </tbody>
             {{/if}}
           </table>
@@ -102,6 +103,7 @@
                     <td>{{description}}</td>
                     <td>{{location}}</td>
                     <td>{{createdAt}}</td>
+                    <td>{{id}}</td>
                     <td>
                        <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
                           <button type="submit" class="btn btn-default" onclick="return confirm('Are you sure you want to delete this record?');">Delete</button>
@@ -113,7 +115,7 @@
             {{else}}
               <thead>
                 <tr>
-                  <th><strong>OOPS. Your List is Empty!</strong<</th>
+                  <th><strong>OOPS. Your List is Empty!</strong></th>
                   </tr>
                 </thead>
                 <tbody>

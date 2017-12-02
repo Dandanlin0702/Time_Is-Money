@@ -35,21 +35,20 @@ const Controller = {
     res.render('profile/offer_form_show');
   },
   delete(req, res) {
-      models.RequestedService.destroy({
+     models.RequestedService.destroy({
+       where: {
+          ServiceId: req.params.id,
+       },
+    }).then(() => {
+      models.Service.destroy({
          where: {
-           ServiceId: req.params.id,
+           id: req.params.id,
          },
-      }).then(() => {
-         models.Service.destroy({
-            where: {
-               ServiceId: req.params.id,
-            }
-         })
-
       }).then(() => {
             res.redirect('/activity');
          });
-      },
+      });
+   },
 };
 
 module.exports = Controller.registerRouter();
