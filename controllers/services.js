@@ -1,5 +1,6 @@
 const express = require('express');
 const models = require('../models/');
+const capitalize = require('../middlewares/capitalize');
 
 const Controller = {
   registerRouter() {
@@ -12,17 +13,13 @@ const Controller = {
     return router;
   },
   index(req, res) {
-    models.SubCategory.findAll({}).then((subcategories) => {
-      res.render('services', {
-        SubCategory: req.params.subcategory,
-        allSubCategories: subcategories
-      });
-    });
+    res.redirect('/');
   },
   show(req, res) {
+    req.params.category = capitalize.titleCase(req.params.category);
     models.Category.findOne({
       where: {
-        category_name: decodeURI(req.params.category)
+        category_name: req.params.category
       },
       include: [
         {
@@ -30,9 +27,10 @@ const Controller = {
         }
       ]
     }).then((categories) => {
+      req.params.subcategory = capitalize.titleCase(req.params.subcategory);
       models.SubCategory.findOne({
         where: {
-          subcategory_name: decodeURI(req.params.subcategory)
+          subcategory_name: req.params.subcategory
         },
         include: [
           {
@@ -40,13 +38,16 @@ const Controller = {
           }
         ]
       }).then((services) => {
-        console.log(req.params.category);
-        res.render('services', {
-          Category: req.params.category,
-          SubCategory: req.params.subcategory,
-          allSubCategories: categories.SubCategories,
-          allServices: services.Services
-        });
+        if (categories === null || services === null) {
+          res.redirect('/');
+        } else {
+          res.render('services', {
+            Category: req.params.category,
+            SubCategory: req.params.subcategory,
+            allSubCategories: categories.SubCategories,
+            allServices: services.Services
+          });
+        }
       });
     });
   },

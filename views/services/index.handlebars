@@ -26,30 +26,27 @@
   </div>
 </nav>
 
+<!-- Services -->
 <div class="container-fluid">
   <div class="container">
-    <!-- Categories -->
-    <div id="categories" class="container-fluid">
-      <div class="container">
-        <h1 class="h1-responsive font-bold text-center">{{SubCategory}}</h1>
-        <br />
-        <div class="card-deck">
-          {{#each allServices}}
-          <div class="col-md-4">
-            <a href="/services/{{../Category}}/{{../SubCategory}}/{{this.id}}">
-              <div class="card text-center">
-                <div class="card-header teal accent-3">
-                  <h4 class="card-title font-bold text-white">{{this.service_name}}</h4>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">{{this.description}}</p>
-                </div>
+    <div class="divider-new">
+      <h1 class="h1-responsive font-bold text-center">{{SubCategory}}</h1>
+    </div>
+    <div class="card-deck">
+      {{#each allServices}}
+        <div class="col-md-4">
+          <a href="/services/{{../Category}}/{{../SubCategory}}/{{this.id}}">
+            <div class="card text-center">
+              <div class="card-header teal accent-3">
+                <h4 class="card-title font-bold text-white">{{this.service_name}}</h4>
               </div>
-            </a>
-          </div>
-          {{/each}}
+              <div class="card-body">
+                <p class="card-text">{{this.description}}</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>

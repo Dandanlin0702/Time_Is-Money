@@ -193,10 +193,6 @@ ol {
   font-size: 165%;
 }
 
-#categories {
-  padding: 40px 0px 80px;
-}
-
 #about {
   background: linear-gradient( rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("https://static.pexels.com/photos/355988/pexels-photo-355988.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
