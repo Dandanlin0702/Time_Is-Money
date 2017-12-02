@@ -6,7 +6,8 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', this.index);
-    router.get('/:subcategory', this.show);
+    router.get('/:category/:subcategory', this.show);
+    router.get('/:category/:subcategory/:service_id', this.serviceInfo);
 
     return router;
   },
@@ -19,11 +20,19 @@ const Controller = {
     });
   },
   show(req, res) {
-    req.params.subcategory = req.params.subcategory.toLowerCase();
-    models.SubCategory.findAll({}).then((subcategories) => {
+    models.Category.findOne({
+      where: {
+        category_name: decodeURI(req.params.category)
+      },
+      include: [
+        {
+          model: models.SubCategory
+        }
+      ]
+    }).then((categories) => {
       models.SubCategory.findOne({
         where: {
-          subcategory_name: req.params.subcategory
+          subcategory_name: decodeURI(req.params.subcategory)
         },
         include: [
           {
@@ -31,13 +40,18 @@ const Controller = {
           }
         ]
       }).then((services) => {
+        console.log(req.params.category);
         res.render('services', {
+          Category: req.params.category,
           SubCategory: req.params.subcategory,
-          allSubCategories: subcategories,
+          allSubCategories: categories.SubCategories,
           allServices: services.Services
         });
       });
     });
+  },
+  serviceInfo(req, res) {
+    res.send("This is service info!");
   }
 };
 
