@@ -8,6 +8,7 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:category', this.show);
+    router.get('/:category/:subcategory', this.show_subcategory);
 
     return router;
   },
@@ -40,6 +41,9 @@ const Controller = {
         }
       });
     });
+  },
+  show_subcategory(req, res) {
+    res.send(res);
   }
 };
 
