@@ -1,45 +1,51 @@
 <!--Main Navigation-->
-  <!--Navbar-->
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<!--Navbar-->
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="/">Time is Money</a>
+  </div>
+</nav>
+<!--/.Navbar-->
+<!--Mask-->
+<!--Intro Section-->
+<div class="view intro-2 hm-black-light">
+  <div class="full-bg-img flex-center">
     <div class="container">
-      <a class="navbar-brand" href="/">Time is Money</a>
-    </div>
-  </nav>
-  <!--/.Navbar-->
-  <!--Mask-->
-  <!--Intro Section-->
-  <div class="view intro-2 hm-black-light">
-    <div class="full-bg-img flex-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto">
-            <div id="login-form" class="card wow fadeIn" data-wow-delay="0.3s">
-              <div class="card-body">
-                <div class="form-header text-center">
-                  <h2 class="h2-responsive font-bold">Log In</h2>
-                  <hr>
-                </div>
-                <form action="/login" method="POST">
-                  <div class="md-form">
-                    <i class="fa fa-user prefix white-text"></i>
-                    <input type="text" name="email" id="orangeForm-name" class="form-control" required>
-                    <label for="orangeForm-name">Email</label>
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto">
+          <div id="login-form" class="card wow fadeIn" data-wow-delay="0.3s">
+            <div class="card-body">
+              <div class="form-header text-center">
+                {{#if error}}
+                  <div class="alert alert-danger alert-dismissable fade show">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <h4 class="alert-heading text-center">{{error}}</h4>
                   </div>
-                  <div class="md-form">
-                    <i class="fa fa-lock prefix white-text"></i>
-                    <input type="password" name="password" id="orangeForm-pass" class="form-control">
-                    <label for="orangeForm-pass">Password</label>
-                  </div>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-lg">Log In</button>
-                  </div>
-                </form>
-                <p style="text-align: center">New user? <a href="/signup">Sign up here</a>.</p>
+                {{/if}}
+                <h2 class="h2-responsive font-bold">Log In</h2>
+                <hr>
               </div>
+              <form action="/login" method="POST">
+                <div class="md-form">
+                  <i class="fa fa-user prefix white-text"></i>
+                  <input type="text" name="email" id="orangeForm-name" class="form-control" required>
+                  <label for="orangeForm-name">Email</label>
+                </div>
+                <div class="md-form">
+                  <i class="fa fa-lock prefix white-text"></i>
+                  <input type="password" name="password" id="orangeForm-pass" class="form-control">
+                  <label for="orangeForm-pass">Password</label>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary btn-lg">Log In</button>
+                </div>
+              </form>
+              <p style="text-align: center">New user? <a href="/signup">Sign up here</a>.</p>
             </div>
           </div>
-          <!--/Form with header-->
         </div>
+        <!--/Form with header-->
       </div>
     </div>
   </div>
+</div>

@@ -5,7 +5,8 @@ redirect.isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect('/');
+  req.flash("error", "Please Login");
+  res.redirect('/login');
 }
 
 // Check if user is trying to access non-loggedin access pages

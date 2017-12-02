@@ -1,5 +1,6 @@
 const express = require('express');
 const models = require('../models/');
+const redirect = require('../middlewares/redirect');
 const capitalize = require('../middlewares/capitalize');
 
 const Controller = {
@@ -8,7 +9,7 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:category/:subcategory', this.show);
-    router.get('/:category/:subcategory/:service_id', this.show_detail);
+    router.get('/:category/:subcategory/:service_id', redirect.isLoggedIn, this.show_detail);
     router.post('/:category/:subcategory/:service_id', this.create_request);
 
     return router;
@@ -91,7 +92,13 @@ const Controller = {
       ServiceId: service_id
     })
     .then((requestservice) => {
-      res.redirect("/profile");
+      if(requestedservice === null){
+        req.flash("error", "Error creating request!");
+        res.redirect("/profile");
+      } else {
+        req.flash("success", "Request successfully created!");
+        res.redirect("/activity");
+      }
     });
   }
 };
