@@ -1,30 +1,37 @@
 const express = require('express');
 const models = require('../models/');
+const capitalize = require('../middlewares/capitalize');
 
 const Controller = {
   registerRouter() {
     const router = express.Router();
 
     router.get('/', this.index);
-    router.get('/:subcategory', this.show);
-    router.get('/:subcategory/:service_id', this.show_detail);
-    router.post('/:subcategory/:service_id', this.create_request);
+    router.get('/:category/:subcategory', this.show);
+    router.get('/:category/:subcategory/:service_id', this.show_detail);
+    router.post('/:category/:subcategory/:service_id', this.create_request);
 
     return router;
   },
   index(req, res) {
-    models.SubCategory.findAll({}).then((subcategories) => {
-      res.render('services', {
-        SubCategory: req.params.subcategory,
-        allSubCategories: subcategories
-      });
-    });
+    res.redirect('/');
   },
   show(req, res) {
-    models.SubCategory.findAll({}).then((subcategories) => {
+    req.params.category = capitalize.titleCase(req.params.category);
+    models.Category.findOne({
+      where: {
+        category_name: req.params.category
+      },
+      include: [
+        {
+          model: models.SubCategory
+        }
+      ]
+    }).then((categories) => {
+      req.params.subcategory = capitalize.titleCase(req.params.subcategory);
       models.SubCategory.findOne({
         where: {
-          subcategory_name: decodeURI(req.params.subcategory)
+          subcategory_name: req.params.subcategory
         },
         include: [
           {
@@ -32,11 +39,16 @@ const Controller = {
           }
         ]
       }).then((services) => {
-        res.render('services', {
-          SubCategory: req.params.subcategory,
-          allSubCategories: subcategories,
-          allServices: services.Services
-        });
+        if (categories === null || services === null) {
+          res.redirect('/');
+        } else {
+          res.render('services', {
+            Category: req.params.category,
+            SubCategory: req.params.subcategory,
+            allSubCategories: categories.SubCategories,
+            allServices: services.Services
+          });
+        }
       });
     });
   },
@@ -67,7 +79,7 @@ const Controller = {
   create_request(req, res) {
     datetime = req.body.datetime;
     num_hours = req.body.num_hours;
-    user_id = req.body.user_id;
+    user_id = req.user.id;
     service_id = req.body.service_id;
 
     //res.send(datetime)

@@ -1,5 +1,5 @@
 <div>
-  <form action="/services/{{{toURI service.SubCategory.subcategory_name}}}/{{service.id}}" method="POST" class="form-horizontal">
+  <form action="/services/{{{toURI service.SubCategory.category_name}}}/{{{toURI service.SubCategory.subcategory_name}}}/{{service.id}}" method="POST" class="form-horizontal">
     <h1>{{service.service_name}}</h1>
 
     by {{service.User.username}}
@@ -27,10 +27,14 @@
       </select>
     </div>
 
-    <input type="hidden" name="user_id" value="{{service.UserId}}">
     <input type="hidden" name="service_id" value="{{service.id}}">
 
-    <button id="submit" type="submit" class="btn btn-default btn-success">Request!</button>
+{{!-- if the user not logged in, let them log in before they request service --}}
+    {{#if cur_user}}
+      <button id="submit" type="submit" class="btn btn-default btn-success">Request!</button>
+    {{else}}
+      Please log in!
+    {{/if}}
 </form>
 
 </div>
