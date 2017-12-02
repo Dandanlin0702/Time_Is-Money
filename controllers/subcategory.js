@@ -29,7 +29,6 @@ const Controller = {
           }
         ]
       }).then((subcat) => {
-        console.log(subcat);
         if (subcat === null) {
           res.redirect('/');
         } else {
