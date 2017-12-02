@@ -15,10 +15,7 @@
     "dialect": "postgresql"
   },
   "production": {
-    "username": "time-is-money",
-    "password": "time",
-    "database": "time-is-money_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "postgresql"
   }
 }
