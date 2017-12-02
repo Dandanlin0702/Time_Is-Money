@@ -34,12 +34,18 @@ const Controller = {
   show(req, res) {
     res.render('profile/offer_form_show');
   },
-
-   delete(req, res) {
+  delete(req, res) {
       models.RequestedService.destroy({
          where: {
            ServiceId: req.params.id,
          },
+      }).then(() => {
+         models.Service.destroy({
+            where: {
+               ServiceId: req.params.id,
+            }
+         })
+
       }).then(() => {
             res.redirect('/activity');
          });
