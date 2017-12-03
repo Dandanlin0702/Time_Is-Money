@@ -3,7 +3,6 @@ const models = require('../models/');
 const passport = require('../middlewares/authentication');
 const redirect = require('../middlewares/redirect');
 
-
 const Controller = {
   registerRouter() {
     const router = express.Router();
@@ -15,40 +14,47 @@ const Controller = {
     return router;
   },
   index(req, res) {
-     //offer service
-     models.Service.findAll({
-        where: {
-           UserId: req.user.id,
-        }
-     }).then((offered_service) => {
-        models.RequestedService.findAll({
-           include: [{model: models.Service}],
-           where: {
-             UserId: req.user.id,
+    //offer service
+    models.Service.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then((offered_service) => {
+      models.RequestedService.findAll({
+        include: [
+          {
+            model: models.Service
           }
-       }).then((services) => {
-          res.render('activity', {servicesreq: services, servicesoff: offered_service});
-       });
-     });
+        ],
+        where: {
+          UserId: req.user.id
+        }
+      }).then((services) => {
+        res.render('activity', {
+          servicesreq: services,
+          servicesoff: offered_service
+        });
+      });
+    });
   },
   show(req, res) {
     res.render('profile/offer_form_show');
   },
   delete(req, res) {
-     models.RequestedService.destroy({
-       where: {
-          ServiceId: req.params.id,
-       },
+    models.RequestedService.destroy({
+      where: {
+        ServiceId: req.params.id
+      }
     }).then(() => {
       models.Service.destroy({
-         where: {
-           id: req.params.id,
-         },
+        where: {
+          id: req.params.id
+        }
       }).then(() => {
-            res.redirect('/activity');
-         });
+        res.redirect('/activity');
       });
-   },
+    });
+  }
 };
 
 module.exports = Controller.registerRouter();

@@ -59,16 +59,15 @@ const Controller = {
       where: {
         id: service_id
       },
-      include:[
+      include: [
         {
           model: models.SubCategory,
-          include:[
+          include: [
             {
               model: models.Category
             }
           ]
-        },
-        {
+        }, {
           model: models.User
         }
       ]
@@ -84,15 +83,8 @@ const Controller = {
     service_id = req.body.service_id;
 
     //res.send(datetime)
-    models.RequestedService.create({
-      is_accepted: 0,
-      requested_datetime: datetime,
-      num_hours: parseInt(num_hours),
-      UserId: user_id,
-      ServiceId: service_id
-    })
-    .then((requestservice) => {
-      if(requestservice === null){
+    models.RequestedService.create({is_accepted: 0, requested_datetime: datetime, num_hours: parseInt(num_hours), UserId: user_id, ServiceId: service_id}).then((requestservice) => {
+      if (requestservice === null) {
         req.flash("error", "Error creating request!");
         res.redirect("/profile");
       } else {

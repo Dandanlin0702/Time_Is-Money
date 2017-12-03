@@ -4,29 +4,29 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     location: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
-    },
+        notEmpty: true
+      }
+    }
   });
 
- Service.associate = (models) => {
-   models.Service.belongsTo(models.User);
-   models.Service.belongsTo(models.SubCategory);
-   models.Service.hasMany(models.RequestedService);
+  Service.associate = (models) => {
+    models.Service.belongsTo(models.User);
+    models.Service.belongsTo(models.SubCategory);
+    models.Service.hasMany(models.RequestedService);
   }
 
   return Service;
