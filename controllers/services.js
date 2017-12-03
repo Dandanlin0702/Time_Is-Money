@@ -92,12 +92,12 @@ const Controller = {
       ServiceId: service_id
     })
     .then((requestservice) => {
-      if(requestedservice === null){
+      if(requestservice === null){
         req.flash("error", "Error creating request!");
         res.redirect("/profile");
       } else {
-        req.flash("success", "Request successfully created!");
-        res.redirect("/activity");
+        req.flash("success", "Request sent! Awaiting approval...");
+        res.redirect("/activity#request");
       }
     });
   }

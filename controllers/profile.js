@@ -8,16 +8,15 @@ const Controller = {
     const router = express.Router();
 
     router.get('/', redirect.isLoggedIn, this.index);
-    router.get('/new', this.new);
+    router.get('/new', redirect.isLoggedIn,this.new);
     router.post('/', this.create);
     router.get('/get_subcategory', this.get_subcategory);
     router.get('/:id', this.show);
 
-
     return router;
   },
   index(req, res) {
-    res.render('profile', { user: req.user, success: req.flash('success')});
+    res.render('profile');
   },
   new(req, res) {
     models.Category.findAll()
@@ -35,8 +34,13 @@ const Controller = {
       location: req.body.location,
       UserId: req.user.id,
       SubCategoryId: req.body.subcategory
-    }).then(() => {
-      res.redirect('/');
+    }).then((service) => {
+      if(service === null){
+        res.redirect('/');
+      } else {
+        req.flash("success", "Service posted successfully!");
+        res.redirect('/activity#offered');
+      }
     })
     //res.redirect('profile/offer_form_show');
   },
