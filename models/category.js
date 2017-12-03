@@ -4,13 +4,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
-    },
+        notEmpty: true
+      }
+    }
   });
 
- // Association
- Category.associate = (models) => {
+  // Association
+  Category.associate = (models) => {
     models.Category.hasMany(models.SubCategory);
   }
 

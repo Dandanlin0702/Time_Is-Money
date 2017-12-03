@@ -9,24 +9,22 @@ function passwordsMatch(passwordSubmitted, storedPassword) {
 }
 
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-  },
-  (email, password, done) => {
-    User.findOne({
-      where: { email },
-    }).then((user) => {
-      if(!user) {
-        return done(null, false, { message: 'Incorrect email.' });
-      }
+  usernameField: 'email'
+}, (email, password, done) => {
+  User.findOne({where: {
+      email
+    }}).then((user) => {
+    if (!user) {
+      return done(null, false, {message: 'Incorrect email.'});
+    }
 
-      if (passwordsMatch(password, user.password_hash) === false) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
+    if (passwordsMatch(password, user.password_hash) === false) {
+      return done(null, false, {message: 'Incorrect password.'});
+    }
 
-      return done(null, user, { message: 'Successfully Logged In!' });
-    });
-  })
-);
+    return done(null, user, {message: 'Successfully Logged In!'});
+  });
+}));
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -42,10 +40,14 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-passport.redirectIfLoggedIn = (route) =>
-  (req, res, next) => (req.user ? res.redirect(route) : next());
+passport.redirectIfLoggedIn = (route) => (req, res, next) => (
+  req.user
+  ? res.redirect(route)
+  : next());
 
-passport.redirectIfNotLoggedIn = (route) =>
-  (req, res, next) => (req.user ? next() : res.redirect(route));
+passport.redirectIfNotLoggedIn = (route) => (req, res, next) => (
+  req.user
+  ? next()
+  : res.redirect(route));
 
 module.exports = passport;

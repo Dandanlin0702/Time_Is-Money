@@ -17,7 +17,7 @@ const Controller = {
   },
   signup(req, res) {
     models.User.create({
-      username: req.body.username,  //memo: body parameter come from post
+      username: req.body.username, //memo: body parameter come from post
       email: req.body.email,
       password: req.body.password
     }).then((user) => {

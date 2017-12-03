@@ -11,7 +11,7 @@
           <a class="nav-link" href="#about">How It Works</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#categories">Marketplace</a>
+          <a class="nav-link" href="#marketplace">Marketplace</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#team">About Us</a>
@@ -19,11 +19,13 @@
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         {{#if cur_user}}
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light" href="/profile">Welcome {{cur_user.username}}!</a>
-          </li>
-          <li class="nav-item">
-            <a href="/logout" class="btn btn-deep-orange btn-sm wow fadeInRight" rel="nofollow">Log Out</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{cur_user.username}}</a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
           </li>
           {{ else }}
           <li class="nav-item">
@@ -71,7 +73,7 @@
 <!-- ./Intro -->
 
 <!-- Categories -->
-<div class="container-fluid" style="padding: 50px 0px 60px">
+<div id="marketplace" class="container-fluid" style="padding: 50px 0px 60px">
   <div class="container">
     <h1 class="h1-responsive font-bold text-center">Marketplace</h1>
     <p class="text-center font-bold mb-5">Explore our marketplace. Have something to offer? Offer your services!</p>
