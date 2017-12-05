@@ -62,7 +62,7 @@
                       <form name="delete-post" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this service?');">&times;</button>
                       </form>
-                    </td>
+                   </td>
                   </tr>
                 </tbody>
               {{/each}}
@@ -106,7 +106,7 @@
                   <th>Description</th>
                   <th>Location</th>
                   <th>Time</th>
-                  <th>Remove Record</th>
+                  <!--th>Remove Record</th-->
                 </tr>
               </thead>
               <!--Body-->
@@ -118,11 +118,11 @@
                     <td>{{description}}</td>
                     <td>{{location}}</td>
                     <td>{{createdAt}}</td>
-                    <td>
+                    <!--td>
                       <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this service?');">&times;</button>
                       </form>
-                    </td>
+                   </td-->
                   </tr>
                 </tbody>
               {{/each}}
