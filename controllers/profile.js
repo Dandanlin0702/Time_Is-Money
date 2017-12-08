@@ -30,7 +30,13 @@ const Controller = {
     });
   },
   create(req, res) {
-    models.Service.create({service_name: req.body.title, description: req.body.description, location: req.body.location, UserId: req.user.id, SubCategoryId: req.body.subcategory}).then((service) => {
+    models.Service.create({
+      service_name: req.body.title,
+      description: req.body.description,
+      location: req.body.city + ", " + req.body.state,
+      UserId: req.user.id,
+      SubCategoryId: req.body.subcategory
+    }).then((service) => {
       if (service === null) {
         res.redirect('/');
       } else {
