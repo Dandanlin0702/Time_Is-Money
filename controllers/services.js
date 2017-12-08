@@ -9,7 +9,7 @@ const Controller = {
 
     router.get('/', this.index);
     router.get('/:category/:subcategory', this.show);
-    router.get('/:category/:subcategory/:service_id', redirect.isLoggedIn, this.show_detail);
+    router.get('/:category/:subcategory/:service_id', this.show_detail);
     router.post('/:category/:subcategory/:service_id', this.create_request);
 
     return router;
@@ -73,7 +73,7 @@ const Controller = {
       ]
     }).then((service) => {
       //res.send(service);
-      res.render('service_detail', {service: service});
+      res.render('services/service_detail', {service: service});
     })
   },
   create_request(req, res) {
