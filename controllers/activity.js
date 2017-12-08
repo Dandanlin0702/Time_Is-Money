@@ -19,7 +19,7 @@ const Controller = {
          where: {
             UserId: req.user.id
          }
-      }).then((offered_service) => {
+      }).then((my_offers) => {
          models.RequestedService.findAll({
             include: [{
                model: models.Service
@@ -27,11 +27,22 @@ const Controller = {
             where: {
                UserId: req.user.id
             }
-         }).then((services) => {
-            res.render('activity', {
-               servicesreq: services,
-               servicesoff: offered_service
-            });
+         }).then((my_requests) => {
+           models.RequestedService.findAll({
+             include: [{
+                model: models.Service,
+                where: {
+                   UserId: req.user.id
+                }
+             }]
+           }).then((requested_services) => {
+             res.send(requested_services);
+             // res.render('activity', {
+             //    servicesreq: my_requests,
+             //    servicesoff: my_offers,
+             //    requested_services: requested_services
+             // });
+           });
          });
       });
    },
