@@ -56,11 +56,11 @@
             {{#if cur_user}}
               <form action="/services/{{{toURI service.SubCategory.category_name}}}/{{{toURI service.SubCategory.subcategory_name}}}/{{service.id}}" method="POST" class="form-horizontal">
 
-                <p>Timeframe: </p>
+                <p class="font-bold">Timeframe: </p>
                 <input id="datetime" type="datetime-local" name="datetime" value="2017-01-01T00:00">
                 <br /> <br />
 
-                <p> Number of Hours:
+                <p class="font-bold">Number of Hours:
                   <select class="dropdown" name="num_hours">
                   <option value="1">1</option>
                   <option value="2">2</option>

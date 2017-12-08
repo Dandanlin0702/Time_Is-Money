@@ -73,7 +73,7 @@ const Controller = {
       ]
     }).then((service) => {
       //res.send(service);
-      res.render('service_detail', {service: service});
+      res.render('services/service_detail', {service: service});
     })
   },
   create_request(req, res) {
