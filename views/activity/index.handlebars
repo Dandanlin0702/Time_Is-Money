@@ -20,6 +20,75 @@
   </div>
 </nav>
 <div class="container-fluid">
+   <!-- Other People's requests -->
+   <div id="requested" class="container" style="padding: 30px 0px;">
+     <div class="col-md-12">
+       <!--List-->
+       <div class="mt-4 card z-depth-3" style="padding: 40px 30px 0px 30px;">
+         {{#if success}}
+           <div class="alert alert-success alert-dismissable fade show">
+             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+             <h4 class="alert-heading text-center">{{success}}</h4>
+           </div>
+         {{/if}}
+         <div clas="card-header">
+           <div class="text-center">
+             <h2 class="h2-responsive"><i class="fa fa-server"></i> Requests You Received</h2>
+           </div>
+         </div>
+         <div class="card-body">
+
+           <table class="table table-hover table-responsive" cellspacing="0" width="100%">
+             {{#if requested_services}}
+               <thead>
+                 <tr>
+                   <th>Name</th>
+                   <th>Description</th>
+                   <th>Location</th>
+                   <th>Credit</th>
+                   <th>Requested Time</th>
+                   <th>Accept</th>
+                   <th>Reject</th>
+                 </tr>
+               </thead>
+               <!--Body-->
+               {{#each servicesreq}}
+                 <tbody>
+                   <tr>
+                     <td>{{Service.service_name}}</td>
+                     <td>{{Service.description}}</td>
+                     <td>{{Service.location}}</td>
+                     <td>{{num_hours}}</td>
+                     <td>{{requested_datetime}}</td>
+                     <td>
+                       <form name="accept-request" method="POST" action="/activity/{{ServiceId}}?_method=ACCEPT">
+                         <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;"><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
+                       </form>
+                    </td>
+                    <td>
+                      <form name="reject-request" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to reject this service?');">&times;</button>
+                      </form>
+                   </td>
+                   </tr>
+                 </tbody>
+               {{/each}}
+             {{else}}
+               <thead>
+                 <tr>
+                   <th><strong>OOPS. You don't having any requests!</strong></th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <td><a href="/profile/new"><strong>CLICK HERE</strong></a> to offer more service!</td>
+               </tbody>
+             {{/if}}
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
+<!-- Other People's requests -->
   <div id="requested" class="container" style="padding: 30px 0px;">
     <div class="col-md-12">
       <!--List-->
@@ -32,7 +101,7 @@
         {{/if}}
         <div clas="card-header">
           <div class="text-center">
-            <h2 class="h2-responsive"><i class="fa fa-server"></i> Requested Services</h2>
+            <h2 class="h2-responsive"><i class="fa fa-server"></i> Your Requests</h2>
           </div>
         </div>
         <div class="card-body">
@@ -41,11 +110,10 @@
             {{#if servicesreq}}
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Name</th>
                   <th>Credit</th>
                   <th>Status</th>
-                  <th>Time</th>
+                  <th>Requested Time</th>
                   <th>Cancel Service</th>
                 </tr>
               </thead>
@@ -53,13 +121,12 @@
               {{#each servicesreq}}
                 <tbody>
                   <tr>
-                    <td>{{ServiceId}}</td>
                     <td>{{Service.service_name}}</td>
                     <td>{{num_hours}}</td>
                     <td>{{is_accepted}}</td>
                     <td>{{requested_datetime}}</td>
                     <td>
-                      <form name="delete-post" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
+                      <form name="delete-requests" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this service?');">&times;</button>
                       </form>
                    </td>
@@ -73,7 +140,7 @@
                 </tr>
               </thead>
               <tbody>
-                <td><a href="#"><strong>CLICK HERE</strong></a> to request your first service!</td>
+                <td><a href="/#marketplace"><strong>CLICK HERE</strong></a> to request your first service!</td>
               </tbody>
             {{/if}}
           </table>
@@ -93,7 +160,7 @@
         {{/if}}
         <div clas="card-header">
           <div class="text-center">
-            <h2 class="h2-responsive"><i class="fa fa-server"></i> Offered Services</h2>
+            <h2 class="h2-responsive"><i class="fa fa-server"></i> What You Offered</h2>
           </div>
         </div>
         <div class="card-body">
@@ -101,28 +168,26 @@
             {{#if servicesoff}}
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Name</th>
                   <th>Description</th>
                   <th>Location</th>
                   <th>Time</th>
-                  <!--th>Remove Record</th-->
+                  <th>Remove Record</th-->
                 </tr>
               </thead>
               <!--Body-->
               {{#each servicesoff}}
                 <tbody>
                   <tr>
-                    <td>{{id}}</td>
                     <td>{{service_name}}</td>
                     <td>{{description}}</td>
                     <td>{{location}}</td>
                     <td>{{createdAt}}</td>
-                    <!--td>
-                      <form name="delete-post" method="POST" action="/activity/{{id}}?_method=DELETE">
+                    <td>
+                      <form name="delete-offeres" method="POST" action="/activity/{{id}}?_method=DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this service?');">&times;</button>
                       </form>
-                   </td-->
+                   </td>
                   </tr>
                 </tbody>
               {{/each}}
