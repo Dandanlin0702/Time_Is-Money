@@ -33,7 +33,10 @@ const Controller = {
                model: models.Service,
                where: {
                   UserId: req.user.id
-               }
+               },
+               include: [{
+                 model: models.User
+               }]
             }]
           }).then((requested_services) => {
             //res.send(requested_services);
