@@ -8,11 +8,11 @@ module.exports = {
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         category_name: 'Pet Services',
+         category_name: 'Pet Care',
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         category_name: 'Babysitting',
+         category_name: 'Child Care',
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
@@ -27,9 +27,9 @@ module.exports = {
       [{
         category_name: 'Tutoring'
      }, {
-        category_name: 'Pet Services'
+        category_name: 'Pet Care'
      }, {
-        category_name: 'Babysitting'
+        category_name: 'Child Care'
      }, {
         category_name: 'Home Care'
       }], {});
