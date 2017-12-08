@@ -42,6 +42,7 @@
              {{#if requested_services}}
                <thead>
                  <tr>
+                   <th>Requested By</th>
                    <th>Name</th>
                    <th>Description</th>
                    <th>Location</th>
@@ -55,6 +56,7 @@
                {{#each servicesreq}}
                  <tbody>
                    <tr>
+                     <td>{{UserId}}</td>
                      <td>{{Service.service_name}}</td>
                      <td>{{Service.description}}</td>
                      <td>{{Service.location}}</td>
