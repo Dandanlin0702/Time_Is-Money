@@ -55,7 +55,7 @@
                <thead>
                  <tr>
                    <th>Requested By</th>
-                   <th>Name</th>
+                   <th>Service Name</th>
                    <th>Description</th>
                    <th>Location</th>
                    <th>Credit</th>
@@ -68,7 +68,7 @@
                {{#each requested_services}}
                  <tbody>
                    <tr>
-                     <td>{{UserId}}</td>
+                     <td>{{Service.UserId}}</td>
                      <td>{{Service.service_name}}</td>
                      <td>{{Service.description}}</td>
                      <td>{{Service.location}}</td>
@@ -127,7 +127,7 @@
             {{#if servicesreq}}
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Service Name</th>
                   <th>Credit</th>
                   <th>Status</th>
                   <th>Requested Time</th>
@@ -185,7 +185,7 @@
             {{#if servicesoff}}
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Service Name</th>
                   <th>Description</th>
                   <th>Location</th>
                   <!-- <th>Time</th> -->

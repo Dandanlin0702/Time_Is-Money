@@ -40,7 +40,7 @@ const Controller = {
                  model: models.User
                }]
             }]
-          }).then((requested_services) => {
+         }).then((requested_services) => {
             //res.send(requested_services);
             res.render('activity', {
                servicesreq: my_requests,
@@ -79,15 +79,15 @@ const Controller = {
             UserId: req.params.id
          }
       }).then(() => {
-         res.redirect('/activity');
-         // models.User.update({
-         //    balance: 4
-         // }, {
-         //    where: {
-         //       id: req.user.id
-         //    }
-         // })
-      });
+            res.redirect('/activity');
+            // models.User.update({
+            //    balance: 4
+            // }, {
+            //    where: {
+            //       id: req.user.id
+            //    }
+            // })
+         });
    },
    reject(req, res) {
       models.RequestedService.update({
