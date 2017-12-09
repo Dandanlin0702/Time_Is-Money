@@ -4,7 +4,7 @@ module.exports = {
    up: (queryInterface, Sequelize) => {
       //Testing RequestedService
       return queryInterface.bulkInsert('RequestedServices', [{
-         is_accepted: true,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 2,
          UserId: 2,
@@ -12,7 +12,7 @@ module.exports = {
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         is_accepted: false,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 20,
          UserId: 3,
@@ -20,7 +20,7 @@ module.exports = {
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         is_accepted: true,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 4,
          UserId: 3,
@@ -28,7 +28,7 @@ module.exports = {
          createdAt: new Date(),
          updatedAt: new Date(),
       }, {
-         is_accepted: true,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 0.5,
          UserId: 4,
@@ -41,19 +41,19 @@ module.exports = {
    down: (queryInterface, Sequelize) => {
       queryInterface.bulkDelete('RequestedServices',
       [{
-         is_accepted: true,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 2
       }, {
-         is_accepted: false,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 20
       }, {
-         is_accepted: false,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 4
       }, {
-         is_accepted: false,
+         status: "Pending",
          requested_datetime: new Date(),
          num_hours: 0.5
       }], {});
