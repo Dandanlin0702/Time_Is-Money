@@ -6,6 +6,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#external-request">Incoming</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#internal-request">Outgoing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#offered">Offered</a>
+        </li>
+      </ul>
+
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{cur_user.username}}</a>
@@ -21,7 +33,7 @@
 </nav>
 <div class="container-fluid">
    <!-- Other People's requests -->
-   <div id="requested" class="container" style="padding: 30px 0px;">
+   <div id="external-request" class="container" style="padding: 30px 0px;">
      <div class="col-md-12">
        <!--List-->
        <div class="mt-4 card z-depth-3" style="padding: 40px 30px 0px 30px;">
@@ -33,7 +45,7 @@
          {{/if}}
          <div clas="card-header">
            <div class="text-center">
-             <h2 class="h2-responsive"><i class="fa fa-server"></i> Requests You Received</h2>
+             <h2 class="h2-responsive"><i class="fa fa-server"></i> Received Requests</h2>
            </div>
          </div>
          <div class="card-body">
@@ -91,7 +103,7 @@
      </div>
    </div>
 <!-- Other People's requests -->
-  <div id="requested" class="container" style="padding: 30px 0px;">
+  <div id="internal-request" class="container" style="padding: 30px 0px;">
     <div class="col-md-12">
       <!--List-->
       <div class="mt-4 card z-depth-3" style="padding: 40px 30px 0px 30px;">
@@ -106,7 +118,7 @@
             requested by {{UserId}}
           {{/each}} --}}
           <div class="text-center">
-            <h2 class="h2-responsive"><i class="fa fa-server"></i> Your Requests</h2>
+            <h2 class="h2-responsive"><i class="fa fa-server"></i> Outgoing Requests</h2>
           </div>
         </div>
         <div class="card-body">
@@ -128,7 +140,7 @@
                   <tr>
                     <td>{{Service.service_name}}</td>
                     <td>{{num_hours}}</td>
-                    <td>{{is_accepted}}</td>
+                    <td>{{status}}</td>
                     <td>{{requested_datetime}}</td>
                     <td>
                       <form name="delete-requests" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
@@ -165,7 +177,7 @@
         {{/if}}
         <div clas="card-header">
           <div class="text-center">
-            <h2 class="h2-responsive"><i class="fa fa-server"></i> What You Offered</h2>
+            <h2 class="h2-responsive"><i class="fa fa-server"></i> Offered Services</h2>
           </div>
         </div>
         <div class="card-body">
@@ -176,8 +188,8 @@
                   <th>Name</th>
                   <th>Description</th>
                   <th>Location</th>
-                  <th>Time</th>
-                  <th>Remove Record</th-->
+                  <!-- <th>Time</th> -->
+                  <th>Remove Record</th>
                 </tr>
               </thead>
               <!--Body-->
@@ -187,7 +199,7 @@
                     <td>{{service_name}}</td>
                     <td>{{description}}</td>
                     <td>{{location}}</td>
-                    <td>{{createdAt}}</td>
+                    <!-- <td>{{createdAt}}</td> -->
                     <td>
                       <form name="delete-offeres" method="POST" action="/activity/{{id}}?_method=DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this service?');">&times;</button>
