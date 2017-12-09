@@ -47,6 +47,12 @@ module.exports = {
          CategoryId: 1,
          createdAt: new Date(),
          updatedAt: new Date(),
+      }, {
+         subcategory_name: 'MISC',
+         description: 'Services that did not fit any subcategory perfectly',
+         CategoryId: 1,
+         createdAt: new Date(),
+         updatedAt: new Date(),
       },
 
       //Category 2
@@ -98,6 +104,12 @@ module.exports = {
        CategoryId: 2,
        createdAt: new Date(),
        updatedAt: new Date(),
+    }, {
+       subcategory_name: 'MISC',
+       description: 'Services that did not fit any subcategory perfectly',
+       CategoryId: 2,
+       createdAt: new Date(),
+       updatedAt: new Date(),
     },
 
     //Category 3
@@ -134,6 +146,12 @@ module.exports = {
   }, {
      subcategory_name: 'After School Pickup',
      description: 'Create a secret keyword that\'ll allow us to pick up your child from school to you!',
+     CategoryId: 3,
+     createdAt: new Date(),
+     updatedAt: new Date(),
+  }, {
+     subcategory_name: 'MISC',
+     description: 'Services that did not fit any subcategory perfectly',
      CategoryId: 3,
      createdAt: new Date(),
      updatedAt: new Date(),
@@ -197,6 +215,12 @@ module.exports = {
 }, {
    subcategory_name: 'Take Down Christmas Lights',
    description: 'Don\'t be like that family that leaves their decorations up until Spring',
+   CategoryId: 4,
+   createdAt: new Date(),
+   updatedAt: new Date(),
+}, {
+   subcategory_name: 'MISC',
+   description: 'Services that did not fit any subcategory perfectly',
    CategoryId: 4,
    createdAt: new Date(),
    updatedAt: new Date(),
