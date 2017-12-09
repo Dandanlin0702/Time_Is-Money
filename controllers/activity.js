@@ -10,6 +10,8 @@ const Controller = {
       router.get('/', redirect.isLoggedIn, this.index);
       router.get('/:id', this.show);
       router.delete('/:id', this.delete);
+      router.get('/accept/:id', this.accept);
+      router.get('/reject/:id', this.reject);
 
       return router;
    },
@@ -67,6 +69,41 @@ const Controller = {
          }).then(() => {
             res.redirect('/activity');
          });
+      });
+   },
+   accept(req, res) {
+      models.RequestedService.update({
+         status: "IN PROGRESS"
+      }, {
+         where: {
+            UserId: req.params.id
+         }
+      }).then(() => {
+         res.redirect('/activity');
+         // models.User.update({
+         //    balance: 4
+         // }, {
+         //    where: {
+         //       id: req.user.id
+         //    }
+         // })
+      });
+   },
+   reject(req, res) {
+      models.RequestedService.update({
+         status: "REJECTED"
+      }, {
+         where: {
+            UserId: req.params.id
+         }
+      }).then(() => {
+         // models.RequestedService.destroy({
+         //    where: {
+         //       id: req.user.id,
+         //    }
+         // }).then(() => {
+            res.redirect('/activity');
+         // });
       });
    }
 };
