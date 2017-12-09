@@ -45,11 +45,11 @@
     <div class="divider-new">
       <h1 class="h1-responsive font-bold text-center">{{Category}}</h1>
     </div>
-    <div class="card-deck" style="padding: 20px 0px;">
+    <div class="card-deck">
       {{#each allSubCategories}}
         <div class="col-md-4">
           <a class="card-link" href="/services/{{../Category}}/{{this.subcategory_name}}">
-            <div class="card text-center">
+            <div class="card text-center" style="margin: 20px 0px;">
               <div class="card-header cyan accent-3">
                 <h4 class="card-title font-bold text-white">{{this.subcategory_name}}</h4>
               </div>
