@@ -6,11 +6,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        {{#each allSubCategories}}
-          <li class="nav-item">
-            <a class="nav-link" href="/services/{{../Category}}/{{ this.subcategory_name}}">{{this.subcategory_name}}</a>
-          </li>
-        {{/each}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More {{Category}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {{#each allSubCategories}}
+              <a class="dropdown-item" href="/services/{{../Category}}/{{ this.subcategory_name}}">{{this.subcategory_name}}</a>
+            {{/each}}
+          </div>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         {{#if cur_user}}
@@ -45,7 +50,7 @@
       {{#each allServices}}
         <div class="col-md-4">
           <a href="/services/{{../Category}}/{{../SubCategory}}/{{this.id}}">
-            <div class="card text-center">
+            <div class="card text-center" style="margin: 20px 0px;">
               <div class="card-header teal accent-3">
                 <h4 class="card-title font-bold text-white">{{this.service_name}}</h4>
               </div>

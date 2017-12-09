@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const RequestedService = sequelize.define('RequestedService', {
-    is_accepted: {
-      type: DataTypes.BOOLEAN,
+    status: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true
