@@ -79,15 +79,8 @@ const Controller = {
             UserId: req.params.id
          }
       }).then(() => {
-            res.redirect('/activity');
-            // models.User.update({
-            //    balance: 4
-            // }, {
-            //    where: {
-            //       id: req.user.id
-            //    }
-            // })
-         });
+         res.redirect('/activity');
+      });
    },
    reject(req, res) {
       models.RequestedService.update({
@@ -97,14 +90,8 @@ const Controller = {
             UserId: req.params.id
          }
       }).then(() => {
-         // models.RequestedService.destroy({
-         //    where: {
-         //       id: req.user.id,
-         //    }
-         // }).then(() => {
             res.redirect('/activity');
-         // });
-      });
+         });
    }
 };
 
