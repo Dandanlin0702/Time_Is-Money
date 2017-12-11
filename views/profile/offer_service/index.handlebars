@@ -43,9 +43,9 @@
                   <label for="location">Location</label>
                     <div class="form-inline black-text">
 
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="city" placeholder="i.e. New York" required>
+                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="city" placeholder="City (i.e. New York)" required>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <input type="text" class="form-control" id="inlineFormInputGroup" name="state" placeholder="i.e. NY" required>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="state" placeholder="State (i.e. NY)" required>
                     </div>
                   <!-- <label for="location">Location</label>
                   <input id="location" type="text" name="city" class="form-control" required>
@@ -57,6 +57,7 @@
               <div class="form-group">
                 <label for="categories_select">Category</label>
                 <select class="form-control" id="categories_select">
+                  <option>Select Category</option>
               {{#each categories}}
                 <option id="{{id}}">{{category_name}}</option>
               {{/each}}
