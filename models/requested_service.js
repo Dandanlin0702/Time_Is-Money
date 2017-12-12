@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        isNumeric: true
       }
     }
   });

@@ -12,6 +12,7 @@ const Controller = {
       router.delete('/:id', this.delete);
       router.get('/accept/:id', this.accept);
       router.get('/reject/:id', this.reject);
+      router.get('/accept/update/:num_hours', this.add_hours);
 
       return router;
    },
@@ -90,9 +91,20 @@ const Controller = {
             UserId: req.params.id
          }
       }).then(() => {
-            res.redirect('/activity');
-         });
-   }
+         res.redirect('/activity');
+      });
+   },
+   add_hours(req, res) {
+      models.User.update({
+         balance: parseInt(req.user.balance)+parseInt(req.params.num_hours)
+      }, {
+         where: {
+            id: req.user.id
+         },
+      }).then(() => {
+          res.redirect('/activity');
+      });
+   },
 };
 
 module.exports = Controller.registerRouter();
