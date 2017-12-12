@@ -17,10 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     num_hours: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: false,
       validate: {
-        notEmpty: true,
-        isNumeric: true
+        notEmpty: true
       }
     }
   });
