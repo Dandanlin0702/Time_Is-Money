@@ -12,7 +12,7 @@ const Controller = {
       router.delete('/:id', this.delete);
       router.get('/accept/:id', this.accept);
       router.get('/reject/:id', this.reject);
-      router.get('/accept/update/:num_hours', this.add_hours);
+      // router.get('/accept/update/:num_hours', this.add_hours);
 
       return router;
    },
@@ -79,8 +79,42 @@ const Controller = {
          where: {
             UserId: req.params.id
          }
-      }).then(() => {
-         res.redirect('/activity');
+      }).then((reveived_services) => {
+         models.RequestedService.findAll({
+            include: [{
+               model: models.User,
+               where: {
+                  id: req.params.id
+               },
+               include: [{
+                  model: models.Service,
+                  where: {
+                     UserId: req.params.id
+                  },
+               }]
+            }],
+            where: {
+               UserId: req.params.id
+            },
+         }).then(() => {
+            models.User.increment({
+               balance: reveived_services[0],
+            }, {
+               where: {
+                  id: req.user.id
+               }
+            }).then(() => {
+               models.User.update({
+                  balance: req.user.balance-reveived_services[0]
+               }, {
+                  where: {
+                     id: req.params.id
+                  }
+               }).then(() => {
+                  res.redirect('/activity');
+               });
+            });
+         });
       });
    },
    reject(req, res) {
@@ -94,17 +128,17 @@ const Controller = {
          res.redirect('/activity');
       });
    },
-   add_hours(req, res) {
-      models.User.update({
-         balance: parseInt(req.user.balance)+parseInt(req.params.num_hours)
-      }, {
-         where: {
-            id: req.user.id
-         },
-      }).then(() => {
-          res.redirect('/activity');
-      });
-   },
+   // add_hours(req, res) {
+   //    models.User.update({
+   //       balance: parseInt(req.user.balance)+parseInt(req.params.num_hours)
+   //    }, {
+   //       where: {
+   //          id: req.user.id
+   //       },
+   //    }).then(() => {
+   //        res.redirect('/activity');
+   //    });
+   // },
 };
 
 module.exports = Controller.registerRouter();

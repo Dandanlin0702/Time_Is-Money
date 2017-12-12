@@ -75,10 +75,8 @@
                      <td>{{num_hours}}</td>
                      <td>{{requested_datetime}}</td>
                      <td>
-                       <form name="accept-request" method="GET" action=" /activity/accept/{{UserId}}?_method=ACCEPT">
-                          <form type="hidden" name="accept-request" method="GET" action=" /activity/accept/update/{{num_hours}}?_method=ADD_HOURS">
-                            <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;" ><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
-                         </form>
+                       <form name="accept-request" method="GET" action=" /activity/accept/{{UserId}}?_method=ACCEPT;" >
+                         <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;" ><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
                       </form>
                     </td>
                     <td>
