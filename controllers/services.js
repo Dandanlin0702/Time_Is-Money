@@ -2,6 +2,8 @@ const express = require('express');
 const models = require('../models/');
 const redirect = require('../middlewares/redirect');
 const capitalize = require('../middlewares/capitalize');
+const moment = require('moment');
+const moment_tz = require('moment-timezone');
 
 const Controller = {
   registerRouter() {
@@ -77,7 +79,7 @@ const Controller = {
     })
   },
   create_request(req, res) {
-    datetime = req.body.datetime;
+    datetime = moment(req.body.datetime).tz("America/New_York");
     num_hours = req.body.num_hours;
     user_id = req.user.id;
     service_id = req.body.service_id;

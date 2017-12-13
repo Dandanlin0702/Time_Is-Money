@@ -60,6 +60,7 @@
                    <th>Location</th>
                    <th>Credit</th>
                    <th>Requested Time</th>
+                   <th>Status</th>
                    <th>Accept</th>
                    <th>Reject</th>
                  </tr>
@@ -74,6 +75,7 @@
                      <td>{{Service.location}}</td>
                      <td>{{num_hours}}</td>
                      <td>{{requested_datetime}}</td>
+                     <td>{{status}}</td>
                      <td>
                      <form name="accept-request" action="/activity/accept/{{id}}?_method=PUT" method="POST" >
                          <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;" ><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
