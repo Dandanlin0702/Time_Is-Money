@@ -55,7 +55,7 @@
                <thead>
                  <tr>
                    <th>Requested By</th>
-                   <th>Name</th>
+                   <th>Service Name</th>
                    <th>Description</th>
                    <th>Location</th>
                    <th>Credit</th>
@@ -69,7 +69,7 @@
                {{#each requested_services}}
                  <tbody>
                    <tr>
-                     <td>{{UserId}}</td>
+                     <td>{{Service.UserId}}</td>
                      <td>{{Service.service_name}}</td>
                      <td>{{Service.description}}</td>
                      <td>{{Service.location}}</td>
@@ -77,12 +77,12 @@
                      <td>{{requested_datetime}}</td>
                      <td>{{status}}</td>
                      <td>
-                       <form name="accept-request" method="POST" action="/activity/{{ServiceId}}?_method=ACCEPT">
-                         <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;"><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
-                       </form>
+                     <form name="accept-request" action="/activity/accept/{{id}}?_method=PUT" method="POST" >
+                         <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;" ><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
+                      </form>
                     </td>
                     <td>
-                      <form name="reject-request" method="POST" action="/activity/{{ServiceId}}?_method=DELETE">
+                      <form name="reject-request" method="POST" action="/activity/reject/{{id}}?_method=PUT">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to reject this service?');">&times;</button>
                       </form>
                    </td>
@@ -96,7 +96,7 @@
                  </tr>
                </thead>
                <tbody>
-                 <td><a href="/profile/new"><strong>CLICK HERE</strong></a> to offer more service!</td>
+                 <td><a href="/profile/new"><strong>CLICK HERE</strong></a> to offer more services!</td>
                </tbody>
              {{/if}}
            </table>
@@ -129,7 +129,7 @@
             {{#if servicesreq}}
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Service Name</th>
                   <th>Credit</th>
                   <th>Status</th>
                   <th>Requested Time</th>
@@ -187,11 +187,11 @@
             {{#if servicesoff}}
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Service Name</th>
                   <th>Description</th>
                   <th>Location</th>
                   <!-- <th>Time</th> -->
-                  <th>Remove Record</th>
+                  <th>Remove Offer</th>
                 </tr>
               </thead>
               <!--Body-->
