@@ -1,0 +1,13 @@
+postgres://
+
+
+
+hvizbnqxxwdsin  //username
+
+
+34a8fb56c173f7a54cadefe0054d3531ea09241eb896aa1e1def0ee999b04191   //password
+
+
+ec2-107-20-226-93.compute-1.amazonaws.com   //hostname
+
+de0ui51s5hm0di   //databasename

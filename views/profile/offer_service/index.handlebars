@@ -56,7 +56,7 @@
             <div class="col-md-5 offset-md-1">
               <div class="form-group">
                 <label for="categories_select">Category</label>
-                <select class="form-control" id="categories_select">
+                <select class="form-control" id="categories_select" required>
                   <option>Select Category</option>
               {{#each categories}}
                 <option id="{{id}}">{{category_name}}</option>
@@ -66,7 +66,7 @@
               <div class="form-group">
                 <div class="form-group">
                   <label>Subcategory</label>
-                  <select class="form-control subcategories_select" name="subcategory">
+                  <select class="form-control subcategories_select" name="subcategory" required>
                 {{#each subcategories}}
                   <option value="{{id}}">{{subcategory_name}}</option>
                 {{/each}}

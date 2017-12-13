@@ -75,12 +75,12 @@
                      <td>{{num_hours}}</td>
                      <td>{{requested_datetime}}</td>
                      <td>
-                       <form name="accept-request" method="GET" action=" /activity/accept/{{UserId}}?_method=ACCEPT;" >
+                     <form name="accept-request" action="/activity/accept/{{id}}?_method=PUT" method="POST" >
                          <button type="submit" class="btn btn-default btn-sm" onclick="Confirm if you are accepting this request;" ><span class="glyphicon glyphicon-ok"></span> &#10003;</button>
                       </form>
                     </td>
                     <td>
-                      <form name="reject-request" method="GET" action="/activity/reject/{{UserId}}?_method=REJECT">
+                      <form name="reject-request" method="POST" action="/activity/reject/{{id}}?_method=PUT">
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to reject this service?');">&times;</button>
                       </form>
                    </td>

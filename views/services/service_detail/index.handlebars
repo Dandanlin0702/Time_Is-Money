@@ -57,17 +57,17 @@
               <form action="/services/{{{toURI service.SubCategory.category_name}}}/{{{toURI service.SubCategory.subcategory_name}}}/{{service.id}}" method="POST" class="form-horizontal">
 
                 <p class="font-bold">Timeframe: </p>
-                <input id="datetime" type="datetime-local" name="datetime" value="2017-01-01T00:00">
+                <input id="datetime" type="datetime-local" name="datetime" value="2017-01-01T00:00" required>
                 <br /> <br />
 
                 <p class="font-bold">Number of Hours:
-                  <select class="dropdown" name="num_hours">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
+                  <select class="dropdown" name="num_hours" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
                 </p>
                 <hr>
                 <div class="text-center">
