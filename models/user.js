@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       unique: false,
-      defaultValue: 0,
+      defaultValue: 5,
       validate: {
         notEmpty: true,
         isNumeric: true
