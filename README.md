@@ -1,6 +1,5 @@
 # [Time is Money](https://intense-mountain-21642.herokuapp.com/)
 https://intense-mountain-21642.herokuapp.com/
-## In Progress
 
 ## What is Time is Money?
 Time is Money is a freelance service site targeted at individuals who have a lot of time but not a lot of money. Our website creates a medium where users can pay for tasks in time currency. What does this mean? It means that users can rack up hours performing tasks requested from their offered services. They can then use these hours and use them to get a task done themselves. This type of transaction can also be particuarly useful for people who do not have access to credit cards who need some simple tasks perfored, whether it is cleaning up their house or getting some tutoring done. 
